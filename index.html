@@ -1,0 +1,960 @@
+<!Doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NUMARK</title>
+
+    <!-- scroll Reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/9753f25b53.js" crossorigin="anonymous"></script>
+
+    <!-- Tailwind Style -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+              }
+            }
+          }
+        }
+      </script>
+
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+        @layer base{
+
+                /* PT+Sans google font */
+                 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+                /* google font jost */
+                @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+                /*###### custom styling #####*/
+
+                /* list styling */
+                .list_style{
+                    @apply hover:border hover:border-[#ee8f00] hover:text-[#ee8f00] p-1 rounded rounded-md hover:shadow-lg  text-sm md:text-base transform hover:scale-[1.03] active:translate-y-[4px]  transition ease-out duration-150 
+                }
+
+                /*special fade in styling  */
+                @media (max-width: 640px ) {
+                    nav{
+                    position: absolute;
+                    top: 6rem;
+                    left: 0px;
+                    width: 100%;
+                    background-color: #222;
+
+                    max-height: 0px;
+                    visibility: hidden;
+                    transition: max-height 380ms ease,
+                        visibility 350ms ease
+                    ;
+                    }
+
+                    header.active nav{
+                        z-index: 10;
+                        max-height: 21.875rem;/*350px */
+                        visibility: visible;
+                        animation: fadeIn 0.7s ease-in-out;
+                        /* the animation above will create a fade in effect */
+                    }
+
+                    @keyframes fadeIn{
+                        from{
+                            opacity: 0;
+                            transform: translateY(-12px);
+                        }
+                        to{
+                            opacity: 1;
+                            transform: translateY(0px);
+                        }
+                    }
+                }
+ 
+                .hero_img{
+                    background-image: url(bg.svg);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;
+                    width: 100%;
+                    height: 100%;
+                }
+                
+                /* CTA*/
+                .fa-arrow-right {
+                    transform: rotateZ(-45deg);
+                    perspective: 800px;
+                }
+                .CTA:active .fa-solid {
+                    animation: roll_back .2s ease-in ;
+                }
+
+                @keyframes roll_back {
+                   from{
+                        transform: rotateZ(-45deg);
+                   }
+                   to{
+                        transform: rotateZ(15deg)
+                   } 
+                }
+
+                hr{
+                    width: 200px;
+                    background-color: #292524;
+                }
+
+                .team__img{
+                    @apply w-16 rounded rounded-full h-16 object-cover
+                }
+                .fa-star {
+                    @apply text-stone-800 text-lg shadow-md
+                }
+
+                .move__right:active{
+                    animation: animate__right 0.2s ease-in;
+                }
+
+                @keyframes animate__right {
+                    from{
+                        opacity: 1;
+                        transform: translateX(0px);
+                    }
+                    to{
+                        opacity: 0.4;
+                        transform: translateX(100px);
+                    }
+                }
+
+                .juggle__btn {
+                    @apply border-4 border-stone-600  font-semibold text-stone-800 rounded rounded-s-full rounded-e-full text-sm md:w-28 h-[50px] shadow-lg bg-white hover:rotate-0 transform active:translate-y-[4px] transition ease-in-out duration-150 ;
+                }
+
+                .btn__up{
+                    @apply transform rotate-12 ;
+                }
+
+                /* hero container  styling image bg*/
+                .hero__container{
+                    background-image: linear-gradient(
+                        rgba(0,0,0, 0.8)50%, rgb(0,0, 0 , 0.8)50%
+                    ) ,url(/imgs/bg_img.jpg)  ;
+                    background-repeat:  no-repeat;
+                    background-size: cover;
+                    background-position: center;
+                    background-attachment: fixed;
+                }
+                
+                .box_card{
+                    position: relative;
+                }
+
+                /* .box_card img{
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                } */
+
+                .card_overlay{
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background-color: #ee8f00;
+                    overflow: hidden;
+                    width: 100%;
+                    height: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: end;
+                    transition: .8s ease ;
+                }
+                
+                .card_hover{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: end;
+                    align-items: center;
+                    margin-bottom: 80px;
+                }
+
+                .box_card:hover .card_overlay{
+                    height: 100% ;
+                }
+
+                .card__img--1{
+                    @apply w-full md:w-1/3 h-[400px] md:h-[600px] rounded rounded-xl overflow-hidden transform hover:scale-[0.95] transition ease-in-out duration-150;
+                }
+
+                .card__hover--txt{
+                    @apply text-2xl text-white font-bold p-2;
+                }
+                .list{
+                    @apply hover:text-stone-400 transition ease-out duration-150;
+                }
+
+                .fa-star{
+                    @apply text-[#ee8f00] shadow-sm;
+                }
+
+                .testimonial_wrap{
+                    @apply w-full md:w-1/3 space-y-5 border border-t-2 border-l-2 border-r-2 border-b-0 border-t-[#ee8f00] rounded rounded-lg  shadow-lg p-7
+                }
+
+            }
+        }
+    </style>
+</head>
+<body class="bg-stone-800">
+    
+    <div class="relative bg-stone-800 h-screen w-full">
+        <div class=" bg-[#ee8f00] w-80 h-96 rounded-e-full"> </div>
+        
+        <!-- main container -->
+        
+        <div class="container w-full absolute top-[10%] md:left-[3%] tranform translate-[-50%, -50%] bg-slate-50 rounded rounded-2xl p-3 md:p-8 ">
+
+            <div >
+
+                <header class="relative bg-stone-800 w-full rounded rounded-xl p-2 text-white font-normal flex justify-between">
+
+                    <!-- holds the page title and the nav container together -->
+                    <div class="flex flex-col md:flex-row items-start justify-center md:items-center md:gap-14   px-2  md:w-[600px]">
+
+                        <!-- webpage name -->
+                        <div class="flex justify-center gap-1 items-center md:px-2 h-full w-max">
+                            
+                            <i class="fa-solid fa-location-dot text-[#ee8f00] text-lg sm:text-2xl md:5xl "> </i>
+    
+                            <h1 class="font-['PT Sans', sans-serif] font-bold text-md sm:text-xl md:text-xl ">
+                                CarGoo
+                            </h1>
+
+                        </div>
+    
+                        <!-- nav --> 
+                        <nav class="nav_menu md:block absolute top-[100%] left-0 z-10 md:relative md:top-0  bg-stone-800 w-full text-slate-300 font-['PT Sans', sans-serif] font-normal py-2 px-2  mt-2 rounded rounded-b-lg ">
+
+                            <ul class="flex flex-row md:justify-around justify-center w-full justify-between md:items-center  ">
+
+                                <li class="list_style "><a href="#" class="text-white hover:text-[#ee8f00] md:px-4  "> Home </a>
+                                </li>
+
+                                <li class="list_style"><a href="#" >About</a>
+                                </li>
+
+                                <li class="list_style"><a href="#" class=" md:px-4 " >Services</a></li>
+
+                                <li class="list_style"><a href="#" class=" md:px-4 ">Blog</a></li>
+
+                                <li class="list_style"><a href="#"  class=" md:px-4 ">Contact</a></li>
+
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <!--nav button -->
+                    <div class=" flex flex-row justify-between items-center md:px-4 w-42 text-xs md:text-base md:w-80 gap-1 ">
+
+                        <button class=" py-2 px-3 md:px-6  hover:bg-[#ee8f00] hover:text-stone-800 hover:font-semibold  hover:rounded-full transform hover:scale-[1.03] active:translate-y-[4px] transition ease-in-out duration-150  "> 
+                            Sign In
+                            <i class="fa-solid fa-right-to-bracket"></i>
+                        </button>
+
+                        <button class=" py-2 px-3 md:px-6 bg-[#ee8f00] hover:bg-transparent hover:text-white text-stone-800 font-semibold active:text-[#ee8f00] md:mx-2 rounded-full transform hover:scale-[1.03] active:translate-y-[4px] transition ease-in-out duration-150  ">
+                            Contact Us
+
+                            <i class="fa-solid fa-phone"></i> <!--phone icon -->
+                        </button>
+
+                    </div>
+
+                    <!-- toggle bar or burger -->
+                    <svg class="toggle_bar w-7 md:hidden "  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                      
+
+                </header><!--ending of header-->
+
+            </div>
+
+            <!-- Hero section -->
+
+            <section class=" w-full my-14 space-y-14  ">   
+
+                <div class=" w-full hero__container flex  flex-col md:flex-row gap-7 md:gap-1 justify-center items-center border rounded-b-xl py-24 md:py-0">
+                    <!-- hero section with a huge image and content on it -->
+                     
+                    <div class=" w-full text-white pl-6 md:pl-6 space-y-36 "> 
+
+                        <div class=" w-full flex flex-col gap-8">
+
+                            <h4 class="font-extrabold text-[#ee8f00] text-sm tracking-widest uppercase ">CarGoo Express Cargo</h4>
+    
+                            <h1 class="text-4xl md:text-6xl text-white font-extrabold  ">
+                                Delivery Service
+                                <span class=" text-[#ee8f00]">Trusted</span> Logistics
+                            </h1>
+    
+                            <p class="w-full px-2 md:w-96">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere excepturi optio numquam praesentium temporibus delectus
+                            </p>
+    
+                            <!-- Hero button wrapper -->
+                            <div class=" flex flex-row justify-around items-center w-full md:w-80 text-xs md:text-base md:w-80 gap-3">
+    
+                                <button class=" py-3 px-3 md:py-4 md:px-4 w-28 md:w-40 bg-[#ee8f00] hover:border-2 hover:border-[#ee8f00] hover:bg-transparent hover:font-semibold rounded-lg transform hover:scale-[0.8] active:translate-y-[4px] transition ease-in-out duration-150  "> 
+                                    About Us
+                                </button>
+        
+                                <button class=" w-28 md:w-40  py-3 md:py-4 px-3 md:px-4 hover:bg-[#ee8f00] bg-transparent border-2 border-[#ee8f00] hover:text-white font-semibold active:text-[#ee8f00] md:mx-2 rounded-lg transform hover:scale-[0.8] active:translate-y-[4px] transition ease-in-out duration-150  ">
+                                    Our Service
+                                </button>
+        
+                            </div>
+                        </div>
+
+                        <div class="w-full grid grid-cols-2 gap-4 md:flex md:justify-around md:items-center  " >
+
+                            <span class=" flex flex-col justify-center items-center  gap-2 hover:border-2 hover:border-[#ee8f00] py-3 md:p-3 hover:rounded-lg tranform hover:scale-[0.8] active:translate-y-[4px] transition ease-in duration-150 " >
+                                <i class="fa-solid fa-water text-lg md:text-4xl text-[#ee8f00] hover:text-white  "></i>
+
+                                <h4 class=" text-sm md:text-xl font-bold ">
+                                    Sea Freight
+                                </h4>
+                            </span>
+                           
+                            <span class=" flex flex-col justify-center items-center  gap-2 hover:border-2 hover:border-[#ee8f00] py-3 md:p-3 hover:rounded-lg tranform hover:scale-[0.8] active:translate-y-[4px] transition ease-in duration-150 " >
+                                <i class="fa-solid fa-house text-lg md:text-4xl text-[#ee8f00] hover:text-white  "></i>
+
+                                <h4 class=" text-sm md:text-xl font-bold ">
+                                    Warehousing 
+                                </h4>
+                            </span>
+
+                            <span class=" flex flex-col justify-center items-center  gap-2 hover:border-2 hover:border-[#ee8f00] py-3 md:p-3 hover:rounded-lg tranform hover:scale-[0.8] active:translate-y-[4px] transition ease-in duration-150 " >
+                                <i class="fa-solid fa-plane-arrival text-lg md:text-4xl text-[#ee8f00] hover:text-white  "></i>
+
+                                <h4 class=" text-sm md:text-xl font-bold ">
+                                    Air Freight
+                                </h4>
+                            </span>
+
+                            <span class=" flex flex-col justify-center items-center  gap-2 hover:border-2 hover:border-[#ee8f00] py-3 md:p-3 hover:rounded-lg tranform hover:scale-[0.8] active:translate-y-[4px] transition ease-in duration-150 " >
+
+                                <i class="fa-solid fa-truck-ramp-box text-lg md:text-4xl text-[#ee8f00] hover:text-white"></i>
+
+                                <h4 class=" text-sm md:text-xl font-bold ">
+                                    Air Freight
+                                </h4>
+                            </span>
+
+                        </div>
+    
+                    </div>
+
+                    <!-- hero img -->
+                    <div class="w-full h-full relative hidden md:block ">
+                        <img src="imgs/F2.png" alt="ship Delivery personnel" class="object-contain object-left ">
+                    </div>
+
+                </div> <!-- end of hero section -->
+
+            </section>
+
+            <!-- export and import section -->
+            <section class="bg-stone-150 w-full h-full py-20 flex flex-col md:flex-row md:justify-center md:items-center  md:pr-38 " >
+
+                <!-- containe wrapper -->
+                <div class="flex flex-col md:flex-row md:justify-center md:items-center space-y-14"> 
+                    <!-- img section -->
+                    <div class="w-full relative text-white ">
+    
+                        <img src="imgs/P2.jpg" alt="two Delivery personnel checking their list" class="h-screen w-full object-cover  rounded rounded-lg ">
+                        
+                        <div class="bg-[#ee8f00] w-[230px] flex flex-col justify-around items-center py-7 px-8 border-r-8 border-t-8 border-b-8 border-white rounded-lg  absolute top-[66%] left-[-7px] ">
+                            <!-- img card  -->
+                            <i class="fa-solid fa-box-open text-5xl"></i>
+    
+                            <span class="text-5xl font-bold ">
+                                0<sup>+</sup>
+                            </span>
+    
+                            <h5 class="font-bold 5xl ">Delivery Goods</h5> 
+                        </div>
+                    </div>
+    
+                    <div class="w-full   text-stone-800 space-y-10  pl-3 md:pl-14" > <!---content-->
+    
+                        <h4 class="font-extrabold text-[#ee8f00] text-sm tracking-widest uppercase ">
+                            Why Chose Us
+                        </h4>
+    
+                            
+                        <h2 class="text-3xl md:text-5xl font-extrabold  ">
+                            We 
+                            <span class=" text-[#ee8f00]">Export & Import</span> Goods all Over The World
+                        </h2>
+    
+                        <!-- section content -->
+                        <div class=" w-full  text-left md:text-justify md:pr-2 space-y-4 ">
+    
+                            <p class="w-full px-2 text-stone-500 ">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam iaculis vulputate dui at fringilla. Pellentesque volutpat ipsum dolor, vitae venenatis dolor posuere quis.
+                            </p>
+    
+                            <p class="w-full px-2 text-stone-500 " >
+                                In vel orci id magna vulputate iaculis. Donec a ex eget ex pretium consectetur at non elit. Suspendisse justo ante, mollis a ornare vitae, vestibulum quis lacus. Phasellus eget orci eu libero sodales convallis. Donec vel purus laoreet, mattis metus ac, lacinia orci.
+                            </p>
+                        </div>
+    
+                        <div class=" md:flex md:gap-4 w-full"> <!--card-->
+    
+                            <div class="bg-white shadow-xl rounded rounded-lg  flex h-40 w-80 py-6 px-3" > <!--card 1-->
+                                <i class="fa-solid fa-gear text-3xl  text-[#ee8f00] "></i>
+    
+                                <div class="pl-3 space-y-3 ">
+                                    <h3 class="text-2xl font-bold  " >Live Chat 24 Hours</h3>
+        
+                                    <p class="text-stone-500 ">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam iaculis
+                                    </p>
+                                </div>
+    
+                            </div> <!--end of card 1-->
+    
+                            <!--card 2-->
+                            <div class="bg-[#ee8f00] shadow-xl rounded rounded-lg  flex  w-80 py-6 px-3" > 
+                                <i class="fa-solid fa-gear text-3xl  text-white "></i>
+    
+                                <div class="pl-3 space-y-3 ">
+                                    <h3 class="text-3xl font-bold  " >Import Export Agent</h3>
+        
+                                    <p class="text-stone-500 ">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam iaculis
+                                    </p>
+                                </div>
+    
+                            </div> <!--end of card 2-->
+    
+                        </div> <!--end of card container-->
+    
+                    </div>
+                    
+                </div>
+
+            </section>
+
+            <!-- section 2 about us -->
+            <section class="bg-white w-full h-full py-20 flex flex-col md:flex-row md:justify-center md:items-center  md:pr-38 " >
+
+                <!-- containe wrapper -->
+                <div class="flex flex-col md:flex-row-reverse md:justify-center md:items-center space-y-14"> 
+                    <!-- img section -->
+                    <div class="w-full relative text-white ">
+    
+                        <img src="imgs/P3.jpg" alt="two Delivery personnel checking their list" class="h-screen w-full object-cover rounded rounded-lg ">
+                        
+                        <div class="bg-[#ee8f00] w-[230px] flex flex-col justify-around items-center py-7 px-8 border-l-8 border-t-8 border-b-8 border-white rounded-lg  absolute top-[2%] right-[-18px] ">
+                            <!-- img card  -->
+    
+                            <span class="text-5xl font-bold ">
+                                0<sup>+</sup>
+                            </span>
+    
+                            <h5 class="font-bold 5xl ">Client Export Import</h5> 
+                        </div>
+                        
+                        <div class="bg-stone-800 w-[230px] flex flex-col justify-around items-center py-7 px-8 border-r-8 border-t-8 border-b-8 border-white rounded-lg  absolute top-[73%] left-[-18px] ">
+                            <!-- img card  -->
+    
+                            <span class="text-5xl font-bold ">
+                                45<sup>+</sup>
+                            </span>
+    
+                            <h5 class="font-bold 5xl ">Shipping Fleet</h5> 
+                        </div>
+
+                    </div>
+    
+                    <div class="w-full   text-stone-800 space-y-10  pr-3 md:pr-14" > <!---content-->
+    
+                        <h4 class="font-extrabold text-[#ee8f00] text-sm tracking-widest uppercase ">
+                            About Us
+                        </h4>
+    
+                            
+                        <h2 class="text-3xl md:text-5xl font-extrabold  ">
+                            We Have More Than 20 Years Of 
+                            <span class=" text-[#ee8f00]">Experience</span> 
+                        </h2>
+    
+                        <!-- section content -->
+                        <div class=" w-full  text-left md:text-justify md:pr-2 space-y-4 ">
+    
+                            <p class="w-full px-2 text-stone-500 ">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam iaculis vulputate dui at fringilla. Pellentesque volutpat ipsum dolor, vitae venenatis dolor posuere quis.
+                            </p>
+    
+                            <p class="w-full px-2 text-stone-500 " >
+                                In vel orci id magna vulputate iaculis. Donec a ex eget ex pretium consectetur at non elit. Suspendisse justo ante, mollis a ornare vitae, vestibulum quis lacus. Phasellus eget orci eu libero sodales convallis. Donec vel purus laoreet, mattis metus ac, lacinia orci.
+                            </p>
+                        </div>
+                        
+                        <!--about us button wrapper -->
+                        <div class=" flex flex-row justify-around items-center w-full md:w-80 text-xs md:text-base md:w-80 gap-3">
+    
+                            <button class=" py-3 px-3 md:py-4 md:px-4 w-28 md:w-40 bg-[#ee8f00] hover:border-2 hover:border-[#ee8f00] hover:bg-transparent font-bold hover:font-semibold rounded-lg transform hover:scale-[0.8] active:translate-y-[4px] transition ease-in-out duration-150  "> 
+                                Contact Us
+
+                                <i class="fa-solid fa-phone"></i> <!--phone icon -->
+
+                            </button>
+    
+                            <button class=" w-28 md:w-40  py-3 md:py-4 px-3 md:px-4 hover:bg-[#ee8f00] bg-transparent border-2 border-[#ee8f00] hover:text-white font-bold hover:font-semibold active:text-[#ee8f00] md:mx-2 rounded-lg transform hover:scale-[0.8] active:translate-y-[4px] transition ease-in-out duration-150  ">
+                                Our Portfolio
+                            </button>
+    
+                        </div>
+
+                    </div>
+                    
+                </div>
+
+            </section>
+
+
+            <section class="bg-stone-150 py-20 px-2 md:px-8 w-full h-full " >
+
+                <div class="w-full flex flex-col justify-center items-center space-y-10 ">
+
+                    <h4 class=" font-extrabold text-[#ee8f00] text-sm tracking-widest uppercase ">
+                        Why Chose Us
+                    </h4>
+                        
+                    <h2 class="w-full md:w-[55%] text-center text-4xl md:text-6xl font-extrabold leading-10 ">
+                        Competitive &  
+                        <span class=" text-[#ee8f00]">Fast Service</span> For You
+                    </h2>
+
+                    <!-- section content -->
+                    <div class="w-full md:w-[60%] text-left md:text-justify space-y-4 ">
+
+                        <p class="w-full text-base text-center px-2 text-stone-500 ">
+
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam iaculis vulputate dui at fringilla. Pellentesque volutpat ipsum dolor, vitae venenatis dolor posuere quis.
+
+                        </p>
+                    </div>
+                </div>
+
+                <div class=" w-full p-4 flex flex-col md:flex-row justify-center items-center gap-6">
+
+                    <!-- card img 1 -->
+                    <div class="box_card card__img--1 ">
+
+                        <img src="imgs/port-de-barcelona-night.jpg" alt=" ship port img" class="w-full h-full block object-cover ">
+
+                        <div class="card_overlay bg-gradient-to-t from-[#ee8f00] to-white opacity-80 " >
+
+                            <div class="card_hover space-y-4">
+
+                                <div class="card__hover--txt">
+                                    Export & Import Service
+                                </div>
+    
+                                <button class=" md:w-40  py-3 md:py-4 px-3 md:px-4 bg-stone-800 hover:bg-stone-600 border-none text-white font-bold hover:font-semibold active:text-[#ee8f00] md:mx-2 rounded-lg transform hover:scale-[0.8] active:translate-y-[4px] text-md transition ease-in-out duration-150  " >
+                                    View Services
+                                </button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    
+                    <!-- card img 2 -->
+                    <div class="box_card card__img--1 ">
+
+                        <img src="imgs/industrial-port-de-barcelona.jpg" alt=" ship port img" class="w-full h-full block object-cover ">
+
+                        <div class="card_overlay bg-gradient-to-t from-[#ee8f00] to-white opacity-80 " >
+
+                            <div class="card_hover space-y-4">
+
+                                <div class="card__hover--txt">Export & Import Service</div>
+    
+                                <button class=" md:w-40  py-3 md:py-4 px-3 md:px-4 bg-stone-800 hover:bg-stone-600 border-none text-white font-bold hover:font-semibold active:text-[#ee8f00] md:mx-2 rounded-lg transform hover:scale-[0.8] active:translate-y-[4px] text-md transition ease-in-out duration-150  " >
+                                    View Services
+                                </button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    
+                    <!-- card img 3 -->
+                    <div class="box_card card__img--1  ">
+
+                        <img src="imgs/close-up-delivery-person-with-parcels.jpg" alt=" close-up-delivery-person-with-parcels" class="w-full h-full block object-cover ">
+
+                        <div class="card_overlay bg-gradient-to-t from-[#ee8f00] to-white opacity-80 " >
+
+                            <div class="card_hover space-y-4">
+
+                                <div class="card__hover--txt">Export & Import Service</div>
+    
+                                <button class=" md:w-40  py-3 md:py-4 px-3 md:px-4 bg-stone-800 hover:bg-stone-600 border-none text-white font-bold hover:font-semibold active:text-[#ee8f00] md:mx-2 rounded-lg transform hover:scale-[0.8] active:translate-y-[4px] text-md transition ease-in-out duration-150  " >
+                                    View Services
+                                </button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- consulting service -->
+            <section class=" w-full my-14 space-y-14  ">   
+
+                <div class=" w-full hero__container flex  flex-col md:flex-row-reverse gap-7 md:gap-1 justify-center items-center border rounded-b-xl py-24 md:py-0">
+                    <!-- hero section with a huge image and content on it -->
+                     
+                    <div class=" w-full text-white pl-6 md:pl-6 space-y-36 "> 
+
+                        <div class=" w-full flex flex-col gap-8">
+    
+                            <h1 class="text-4xl md:text-6xl text-white font-bold  ">
+                                Consult The Service You
+                                <span class=" text-[#ee8f00]">Need Now!</span>
+                            </h1>
+    
+                            <p class="w-full px-2 md:w-[80%]">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere excepturi optio numquam praesentium temporibus delectus
+                            </p>
+
+                            <ul class="w-full flex flex-col md:flex-row justify-around items-start text-md md:text-lg font-semibold md:font-bold list-image-[url(imgs/icons/check-mark.png)] list-inside  gap-3 ">
+                                <li class="list"><a href="#">Fast Delivery</a></li>
+                                <li class="list"><a href="#">Competitive Price </a></li>
+                                <li class="list"><a href="#">Wide Delivery Area</a></li>
+                            </ul>
+    
+                            <!-- Hero button wrapper -->
+                            <div class=" flex flex-row justify-start items-center w-full md:w-80 text-xs md:text-base md:w-80 gap-3">
+    
+                                <button class=" py-3 px-3 md:py-4 md:px-4 w-28 md:w-40 bg-[#ee8f00] hover:border-2 hover:border-[#ee8f00] hover:bg-transparent hover:font-semibold rounded-lg transform hover:scale-[0.8] active:translate-y-[4px] transition ease-in-out duration-150  "> 
+                                    About Us
+                                </button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- hero img -->
+                    <div class="w-full h-full relative hidden md:block ">
+                        <img src="imgs/F2.png" alt="ship Delivery personnel" class="object-contain object-left ">
+                    </div>
+
+                </div> <!-- end of hero section -->
+
+            </section>
+
+            <!-- Testimonial section -->
+            <section class="bg-stone-150 py-20 px-2 md:px-8 w-full h-full">
+
+                <div class="flex flex-col md:flex-row gap-4">
+
+                    <div class="flex flex-col gap-5 w-full">
+                        <h4 class="font-extrabold text-[#ee8f00] text-sm tracking-widest uppercase ">
+                            Testimonials
+                        </h4>
+
+                        <h2 class="text-4xl md:text-6xl text-stone-800 font-bold " >
+                            Whats Our <span class=" text-[#ee8f00]">Clients </span> Said About Us
+                        </h2>
+                    </div>
+
+                    <div class="w-full space-y-5">
+
+                        <p class="text-stone-500">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam iaculis vulputate dui at fringilla. Pellentesque volutpat ipsum dolor, vitae venenatis dolor posuere quis.
+                        </p>
+
+                        <div class=" flex flex-row justify-start items-center w-full md:w-80 text-xs md:text-base md:w-80 gap-3">
+    
+                            <button class=" py-3 px-3 md:py-4 md:px-4 w-28 md:w-40 bg-[#ee8f00] hover:border-2 hover:border-[#ee8f00] hover:bg-transparent hover:font-semibold rounded-lg transform hover:scale-[0.8] active:translate-y-[4px] text-white font-bold hover:text-stone-800  transition ease-in-out duration-150  "> 
+                                About Us
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- testimonial card wrapper -->
+                <div class="w-full text-base pt-24 px-2 text-stone-400 flex flex-col md:flex-row gap-3">
+
+                    <!-- testimonial card 1 -->
+                    <div class="testimonial_wrap ">
+                        <!-- start icons -->
+                        <div class="w-full">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="font-semibold text-md md:text-lg italic ">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam iaculis vulputate dui at fringilla. 
+                        </p>
+
+                        <div class="w-full flex justify-between items-center">
+                            <!-- card name and occupation -->
+                            <div class="flex flex-col ">
+                                <span class="text-stone-800 text-lg font-semibold">
+                                    Colt Porter 
+                                </span>
+
+                                <span class="text-[#ee8f00] text-lg font-semibold" >
+                                    CEO | Founder
+                                </span>
+
+                            </div>
+
+                            <i class="fa-solid fa-quote-right text-3xl md:text-5xl text-[#ee8f00]"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial_wrap  ">
+                        <!-- start icons -->
+                        <div class="w-full">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="font-semibold text-md md:text-lg italic ">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam iaculis vulputate dui at fringilla. 
+                        </p>
+
+                        <div class="w-full flex justify-between items-center">
+                            <!-- card name and occupation -->
+                            <div class="flex flex-col ">
+                                <span class="text-stone-800 text-lg font-semibold">
+                                    Colt Porter 
+                                </span>
+
+                                <span class="text-[#ee8f00] text-lg font-semibold" >
+                                    CEO | Founder
+                                </span>
+
+                            </div>
+
+                            <i class="fa-solid fa-quote-right text-3xl md:text-5xl text-[#ee8f00]"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial_wrap  ">
+                        <!-- start icons -->
+                        <div class="w-full">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="font-semibold text-md md:text-lg italic ">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam iaculis vulputate dui at fringilla. 
+                        </p>
+
+                        <div class="w-full flex justify-between items-center">
+                            <!-- card name and occupation -->
+                            <div class="flex flex-col ">
+                                <span class="text-stone-800 text-lg font-semibold">
+                                    Colt Porter 
+                                </span>
+
+                                <span class="text-[#ee8f00] text-lg font-semibold" >
+                                    CEO | Founder
+                                </span>
+
+                            </div>
+
+                            <i class="fa-solid fa-quote-right text-3xl md:text-5xl text-[#ee8f00]"></i>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </section>
+
+            <!-- our office -->
+            <section class="bg-stone-150 w-full h-full py-20 flex flex-col md:flex-row md:justify-center md:items-center  md:pr-38 " >
+
+                <!-- containe wrapper -->
+                <div class="flex flex-col md:flex-row md:justify-center md:items-center space-y-14"> 
+                    <!-- img section -->
+                    <div class="w-full relative text-white ">
+    
+                        <img src="imgs/P4.jpg" alt="two Delivery personnel checking their list" class="h-screen w-full object-cover  rounded rounded-lg ">
+                        
+                    </div>
+    
+                    <div class="w-full   text-stone-800 space-y-10  pl-3 md:pl-14" > <!---content-->
+    
+                        <h4 class="font-extrabold text-[#ee8f00] text-sm tracking-widest uppercase leading-widest ">
+                            Why Chose Us
+                        </h4>
+    
+                            
+                        <h2 class="text-3xl md:text-5xl font-bold  ">
+                            Our Offices
+                            <span class=" text-[#ee8f00]">Located</span> All Over The World
+                        </h2>
+    
+                        <!-- section content -->
+                        <div class=" w-full  text-left md:text-justify md:pr-2 space-y-4 ">
+    
+                            <p class="w-full px-2 text-stone-500 ">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam iaculis vulputate dui at fringilla. Pellentesque volutpat ipsum dolor, vitae venenatis dolor posuere quis.
+                            </p>
+
+                        </div>
+
+                        <!--card-->
+                        <div class=" md:flex flex-col md:flex-row gap-8 w-full space-y-5 "> 
+    
+                            <!--card 1-->
+                            <div class="bg-stone-800 text-stone-400 shadow-xl rounded rounded-lg  flex flex-col  w-80 py-12 px-6" > 
+
+                                <h3 class="text-[#ee8f00] text-2xl font-bold hover:text-white transition ease-in duration-150" >
+                                    Indonesia
+                                </h3>
+                                <h5 class="hover:text-white">Head Office</h5>
+    
+                                <div class="pl-3 space-y-6 ">
+
+                                    <div class="flex gap-4 ">
+                                        <!-- Address div -->
+                                        <i class="fa-solid fa-house-user text-[#ee8f00] text-2xl"></i>
+                                        <!-- address text -->
+                                        <div>
+                                            <h4 class="text-white text-xl font-bold ">Address </h4>
+                                            <p>99 Roving St., Big City, PKU 23456</p>
+                                        </div>
+
+                                    </div>
+                                    
+                                    <div class="flex gap-4 ">
+                                        <!-- phone number div -->
+
+                                        <i class="fa-solid fa-phone text-[#ee8f00] text-2xl"></i>
+
+                                        <!-- address text -->
+                                        <div>
+                                            <h4 class="text-white text-xl font-bold ">Phone Number </h4>
+                                            <p>123-234-1234</p>
+                                        </div>
+
+                                    </div>
+                                    
+                                    <div class="flex gap-4 ">
+                                        <!-- phone number div -->
+
+                                        <i class="fa-regular fa-envelope text-[#ee8f00] text-2xl"></i>
+
+                                        <!-- address text -->
+                                        <div>
+                                            <h4 class="text-white text-xl font-bold ">Email Address </h4>
+                                            <p>hello@awesomesite.com</p>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+    
+                            </div> <!--end of card 1-->
+                            
+                            <div class="bg-stone-800 text-stone-400 shadow-xl rounded rounded-lg  flex flex-col  w-80 py-12 px-6" > 
+
+                                <h3 class="text-[#ee8f00] text-2xl font-bold hover:text-white transition ease-in duration-150" >
+                                    Indonesia
+                                </h3>
+                                <h5 class="hover:text-white">Head Office</h5>
+    
+                                <div class="pl-3 space-y-6 ">
+
+                                    <div class="flex gap-4 ">
+                                        <!-- Address div -->
+                                        <i class="fa-solid fa-house-user text-[#ee8f00] text-2xl"></i>
+                                        <!-- address text -->
+                                        <div>
+                                            <h4 class="text-white text-xl font-bold ">Address </h4>
+                                            <p>99 Roving St., Big City, PKU 23456</p>
+                                        </div>
+
+                                    </div>
+                                    
+                                    <div class="flex gap-4 ">
+                                        <!-- phone number div -->
+
+                                        <i class="fa-solid fa-phone text-[#ee8f00] text-2xl"></i>
+
+                                        <!-- address text -->
+                                        <div>
+                                            <h4 class="text-white text-xl font-bold ">Phone Number </h4>
+                                            <p>123-234-1234</p>
+                                        </div>
+
+                                    </div>
+                                    
+                                    <div class="flex gap-4 ">
+                                        <!-- phone number div -->
+
+                                        <i class="fa-regular fa-envelope text-[#ee8f00] text-2xl"></i>
+
+                                        <!-- address text -->
+                                        <div>
+                                            <h4 class="text-white text-xl font-bold ">Email Address </h4>
+                                            <p>hello@awesomesite.com</p>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+    
+                            </div> <!--end of card 1-->
+    
+                        </div> <!--end of card container-->
+    
+                    </div>
+                    
+                </div>
+
+            </section>
+
+        </div>
+
+    </div>
+    <!-- Script -->
+    <script src="app.js"></script>
+</body>
+
+</html>
+
