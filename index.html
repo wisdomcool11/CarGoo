@@ -159,8 +159,10 @@
                 @media (max-width: 640px) {
                     .hero__container{
                         background-image: linear-gradient(
-                        rgba(0,0,0, 0.7)50%, rgb(0,0, 0 , 0.7)50%
+                        rgba(0,0,0, 0.6)60%, rgb(0,0, 0 , 0.6)60%
                     ) ,url(imgs/bg_img.jpg)  ;
+
+                    background-attachment: fixed;
                     }
                 }
                 
@@ -317,7 +319,7 @@
                                 <span class=" text-[#ee8f00]">Trusted</span> Logistics
                             </h1>
     
-                            <p class="w-full px-2 md:w-96 text-stone-200">
+                            <p class="w-full px-2 md:w-96 text-stone-200 font-semibold ">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere excepturi optio numquam praesentium temporibus delectus
                             </p>
     
@@ -339,7 +341,7 @@
                         <div class="w-full grid grid-cols-2 gap-4 md:flex md:justify-around md:items-center  " >
 
                             <span class=" flex flex-col justify-center items-center  gap-2 hover:border-2 hover:border-[#ee8f00] py-3 md:p-3 hover:rounded-lg tranform hover:scale-[0.8] active:translate-y-[4px] transition ease-in duration-150 " >
-                                <i class="fa-solid fa-water text-lg md:text-4xl text-[#ee8f00] hover:text-white  "></i>
+                                <i class="fa-solid fa-water text-2xl md:text-4xl text-[#ee8f00] hover:text-white  "></i>
 
                                 <h4 class=" text-sm md:text-xl font-bold ">
                                     Sea Freight
@@ -347,7 +349,8 @@
                             </span>
                            
                             <span class=" flex flex-col justify-center items-center  gap-2 hover:border-2 hover:border-[#ee8f00] py-3 md:p-3 hover:rounded-lg tranform hover:scale-[0.8] active:translate-y-[4px] transition ease-in duration-150 " >
-                                <i class="fa-solid fa-house text-lg md:text-4xl text-[#ee8f00] hover:text-white  "></i>
+
+                                <i class="fa-solid fa-house text-2xl md:text-4xl text-[#ee8f00] hover:text-white  "></i>
 
                                 <h4 class=" text-sm md:text-xl font-bold ">
                                     Warehousing 
@@ -355,7 +358,8 @@
                             </span>
 
                             <span class=" flex flex-col justify-center items-center  gap-2 hover:border-2 hover:border-[#ee8f00] py-3 md:p-3 hover:rounded-lg tranform hover:scale-[0.8] active:translate-y-[4px] transition ease-in duration-150 " >
-                                <i class="fa-solid fa-plane-arrival text-lg md:text-4xl text-[#ee8f00] hover:text-white  "></i>
+
+                                <i class="fa-solid fa-plane-arrival text-2xl md:text-4xl text-[#ee8f00] hover:text-white  "></i>
 
                                 <h4 class=" text-sm md:text-xl font-bold ">
                                     Air Freight
@@ -364,7 +368,7 @@
 
                             <span class=" flex flex-col justify-center items-center  gap-2 hover:border-2 hover:border-[#ee8f00] py-3 md:p-3 hover:rounded-lg tranform hover:scale-[0.8] active:translate-y-[4px] transition ease-in duration-150 " >
 
-                                <i class="fa-solid fa-truck-ramp-box text-lg md:text-4xl text-[#ee8f00] hover:text-white"></i>
+                                <i class="fa-solid fa-truck-ramp-box text-2xl md:text-4xl text-[#ee8f00] hover:text-white"></i>
 
                                 <h4 class=" text-sm md:text-xl font-bold ">
                                     Air Freight
@@ -394,19 +398,19 @@
     
                         <img src="imgs/P2.jpg" alt="two Delivery personnel checking their list" class="h-screen w-full object-cover  rounded rounded-lg ">
                         
-                        <div class="bg-[#ee8f00] w-[230px] flex flex-col justify-around items-center py-7 px-8 border-r-8 border-t-8 border-b-8 border-white rounded-lg  absolute top-[66%] left-[-7px] ">
+                        <div class="bg-[#ee8f00] w-[180px] md:w-[230px] flex flex-col justify-around items-center py-3 md:py-7 px-4 md:px-8 border-r-8 border-t-8 border-b-8 border-white rounded-lg  absolute top-[66%] -left-5 md:left-[-7px] ">
                             <!-- img card  -->
-                            <i class="fa-solid fa-box-open text-5xl"></i>
+                            <i class="fa-solid fa-box-open text-3xl md:text-5xl"></i>
     
-                            <span class="text-5xl font-bold ">
+                            <span class="text-4xl md:text-5xl font-bold ">
                                 0<sup>+</sup>
                             </span>
     
-                            <h5 class="font-bold 5xl ">Delivery Goods</h5> 
+                            <h5 class="font-bold">Delivery Goods</h5> 
                         </div>
                     </div>
     
-                    <div class="w-full   text-stone-800 space-y-10  pl-3 md:pl-14" > <!---content-->
+                    <div class="w-full mt-10px md:mt-0 text-stone-800 space-y-10  pl-3 md:pl-14" > <!---content-->
     
                         <h4 class="font-extrabold text-[#ee8f00] text-sm tracking-widest uppercase ">
                             Why Chose Us
@@ -430,13 +434,13 @@
                             </p>
                         </div>
     
-                        <div class=" md:flex md:gap-4 w-full"> <!--card-->
+                        <div class=" flex flex-col md:flex-row gap-4 w-full px-8 md:px-0"> <!--card-->
     
-                            <div class="bg-white shadow-xl rounded rounded-lg  flex h-40 w-80 py-6 px-3" > <!--card 1-->
-                                <i class="fa-solid fa-gear text-3xl  text-[#ee8f00] "></i>
+                            <div class="bg-white shadow-xl rounded rounded-lg  flex h-auto md:h-40 w-auto md:w-80 py-6 px-3" > <!--card 1-->
+                                <i class="fa-solid fa-gear text-xl md:text-3xl  text-[#ee8f00] "></i>
     
                                 <div class="pl-3 space-y-3 ">
-                                    <h3 class="text-2xl font-bold  " >Live Chat 24 Hours</h3>
+                                    <h3 class="text-2xl font-bold ">Live Chat 24 Hours</h3>
         
                                     <p class="text-stone-500 ">
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam iaculis
@@ -446,13 +450,13 @@
                             </div> <!--end of card 1-->
     
                             <!--card 2-->
-                            <div class="bg-[#ee8f00] shadow-xl rounded rounded-lg  flex  w-80 py-6 px-3" > 
-                                <i class="fa-solid fa-gear text-3xl  text-white "></i>
+                            <div class="bg-[#ee8f00] shadow-xl rounded rounded-lg  flex  w-auto md:w-80 py-6 px-3 text-stone-200 "> 
+                                <i class="fa-solid fa-gear text-xl md:text-3xl text-white "></i>
     
                                 <div class="pl-3 space-y-3 ">
-                                    <h3 class="text-3xl font-bold  " >Import Export Agent</h3>
+                                    <h3 class=" text-2xl md:text-3xl font-bold ">Import Export Agent</h3>
         
-                                    <p class="text-stone-500 ">
+                                    <p class="text-stone-200 ">
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam iaculis
                                     </p>
                                 </div>
@@ -477,20 +481,20 @@
     
                         <img src="imgs/P3.jpg" alt="two Delivery personnel checking their list" class="h-screen w-full object-cover rounded rounded-lg ">
                         
-                        <div class="bg-[#ee8f00] w-[230px] flex flex-col justify-around items-center py-7 px-8 border-l-8 border-t-8 border-b-8 border-white rounded-lg  absolute top-[2%] right-[-18px] ">
+                        <div class="bg-[#ee8f00] w-[180px] md:w-[230px] flex flex-col justify-around items-center py-3 md:py-7 px-4 md:px-8 border-l-8 border-t-8 border-b-8 border-white rounded-lg  absolute top-[2%] right-[-12px] ">
                             <!-- img card  -->
     
-                            <span class="text-5xl font-bold ">
+                            <span class="text-4xl md:text-5xl font-bold ">
                                 0<sup>+</sup>
                             </span>
     
-                            <h5 class="font-bold 5xl ">Client Export Import</h5> 
+                            <h5 class="font-bold text-center ">Client Export Import</h5> 
                         </div>
                         
-                        <div class="bg-stone-800 w-[230px] flex flex-col justify-around items-center py-7 px-8 border-r-8 border-t-8 border-b-8 border-white rounded-lg  absolute top-[73%] left-[-18px] ">
+                        <div class="bg-stone-800 w-[180px] md:w-[230px] flex flex-col justify-around items-center py-3 md:py-7 px-4 md:px-8 border-r-8 border-t-8 border-b-8 border-white rounded-lg  absolute top-[73%] left-[-18px] ">
                             <!-- img card  -->
     
-                            <span class="text-5xl font-bold ">
+                            <span class="text-4xl md:text-5xl font-bold ">
                                 45<sup>+</sup>
                             </span>
     
@@ -499,14 +503,14 @@
 
                     </div>
     
-                    <div class="w-full   text-stone-800 space-y-10  pr-3 md:pr-14" > <!---content-->
+                    <div class="w-full text-stone-800 space-y-10 md:pl-5  md:pr-14" > <!---content-->
     
                         <h4 class="font-extrabold text-[#ee8f00] text-sm tracking-widest uppercase ">
                             About Us
                         </h4>
     
                             
-                        <h2 class="text-3xl md:text-5xl font-extrabold  ">
+                        <h2 class="text-3xl md:text-5xl font-extrabold   ">
                             We Have More Than 20 Years Of 
                             <span class=" text-[#ee8f00]">Experience</span> 
                         </h2>
@@ -554,7 +558,7 @@
                         Why Chose Us
                     </h4>
                         
-                    <h2 class="w-full md:w-[55%] text-center text-4xl md:text-6xl font-extrabold leading-10 ">
+                    <h2 class="w-full md:w-[55%] text-4xl md:text-6xl font-extrabold leading-10 ">
                         Competitive &  
                         <span class=" text-[#ee8f00]">Fast Service</span> For You
                     </h2>
@@ -716,7 +720,7 @@
                 </div>
 
                 <!-- testimonial card wrapper -->
-                <div class="w-full text-base pt-24 px-2 text-stone-400 flex flex-col md:flex-row gap-3">
+                <div class="w-full text-base pt-24 px-4 md:px-2 text-stone-400 flex flex-col md:flex-row gap-3">
 
                     <!-- testimonial card 1 -->
                     <div class="testimonial_wrap ">
@@ -745,7 +749,7 @@
 
                             </div>
 
-                            <i class="fa-solid fa-quote-right text-3xl md:text-5xl text-[#ee8f00]"></i>
+                            <i class="fa-solid fa-quote-right text-xl md:text-3xl md:text-5xl text-[#ee8f00]"></i>
                         </div>
                     </div>
                     
@@ -775,7 +779,7 @@
 
                             </div>
 
-                            <i class="fa-solid fa-quote-right text-3xl md:text-5xl text-[#ee8f00]"></i>
+                            <i class="fa-solid fa-quote-right text-xl md:text-3xl md:text-5xl text-[#ee8f00]"></i>
                         </div>
                     </div>
                     
@@ -805,7 +809,7 @@
 
                             </div>
 
-                            <i class="fa-solid fa-quote-right text-3xl md:text-5xl text-[#ee8f00]"></i>
+                            <i class="fa-solid fa-quote-right text-xl md:text-3xl md:text-5xl text-[#ee8f00]"></i>
                         </div>
                     </div>
 
@@ -822,7 +826,7 @@
                     <!-- img section -->
                     <div class="w-full relative text-white ">
     
-                        <img src="imgs/P4.jpg" alt="two Delivery personnel checking their list" class="h-screen w-full object-cover  rounded rounded-lg ">
+                        <img src="imgs/P4.jpg" alt="two Delivery personnel checking their list" class=" h-[300px] md:h-screen w-full object-cover rounded rounded-lg ">
                         
                     </div>
     
@@ -853,19 +857,19 @@
                             <!--card 1-->
                             <div class="bg-stone-800 text-stone-400 shadow-xl rounded rounded-lg  flex flex-col  w-80 py-12 px-6" > 
 
-                                <h3 class="text-[#ee8f00] text-2xl font-bold hover:text-white transition ease-in duration-150" >
+                                <h3 class="text-[#ee8f00] text-xl md:text-2xl font-bold hover:text-white transition ease-in duration-150" >
                                     Indonesia
                                 </h3>
                                 <h5 class="hover:text-white">Head Office</h5>
     
-                                <div class="pl-3 space-y-6 ">
+                                <div class="pl-3 space-y-6  mt-4">
 
                                     <div class="flex gap-4 ">
                                         <!-- Address div -->
                                         <i class="fa-solid fa-house-user text-[#ee8f00] text-2xl"></i>
                                         <!-- address text -->
                                         <div>
-                                            <h4 class="text-white text-xl font-bold ">Address </h4>
+                                            <h4 class="text-white text-md md:text-xl font-bold">Address </h4>
                                             <p>99 Roving St., Big City, PKU 23456</p>
                                         </div>
 
@@ -878,7 +882,7 @@
 
                                         <!-- address text -->
                                         <div>
-                                            <h4 class="text-white text-xl font-bold ">Phone Number </h4>
+                                            <h4 class="text-white text-md md:text-xl font-bold ">Phone Number </h4>
                                             <p>123-234-1234</p>
                                         </div>
 
@@ -891,7 +895,7 @@
 
                                         <!-- address text -->
                                         <div>
-                                            <h4 class="text-white text-xl font-bold ">Email Address </h4>
+                                            <h4 class="text-white text-md md:text-xl font-bold ">Email Address </h4>
                                             <p>hello@awesomesite.com</p>
                                         </div>
 
@@ -901,21 +905,22 @@
     
                             </div> <!--end of card 1-->
                             
+                            <!--card 2-->
                             <div class="bg-stone-800 text-stone-400 shadow-xl rounded rounded-lg  flex flex-col  w-80 py-12 px-6" > 
 
-                                <h3 class="text-[#ee8f00] text-2xl font-bold hover:text-white transition ease-in duration-150" >
+                                <h3 class="text-[#ee8f00] text-xl md:text-2xl font-bold hover:text-white transition ease-in duration-150" >
                                     Indonesia
                                 </h3>
                                 <h5 class="hover:text-white">Head Office</h5>
     
-                                <div class="pl-3 space-y-6 ">
+                                <div class="pl-3 space-y-6  mt-4">
 
                                     <div class="flex gap-4 ">
                                         <!-- Address div -->
                                         <i class="fa-solid fa-house-user text-[#ee8f00] text-2xl"></i>
                                         <!-- address text -->
                                         <div>
-                                            <h4 class="text-white text-xl font-bold ">Address </h4>
+                                            <h4 class="text-white text-md md:text-xl font-bold">Address </h4>
                                             <p>99 Roving St., Big City, PKU 23456</p>
                                         </div>
 
@@ -928,7 +933,7 @@
 
                                         <!-- address text -->
                                         <div>
-                                            <h4 class="text-white text-xl font-bold ">Phone Number </h4>
+                                            <h4 class="text-white text-md md:text-xl font-bold ">Phone Number </h4>
                                             <p>123-234-1234</p>
                                         </div>
 
@@ -941,15 +946,16 @@
 
                                         <!-- address text -->
                                         <div>
-                                            <h4 class="text-white text-xl font-bold ">Email Address </h4>
-                                            <p><a href="#">hello@awesomesite.com</a> </p>
+                                            <h4 class="text-white text-md md:text-xl font-bold ">Email Address </h4>
+                                            <p>hello@awesomesite.com</p>
                                         </div>
 
                                     </div>
 
                                 </div>
     
-                            </div> <!--end of card 1-->
+                            </div> <!--end of card 2-->
+                            
     
                         </div> <!--end of card container-->
     
