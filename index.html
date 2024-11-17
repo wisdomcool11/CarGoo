@@ -155,6 +155,14 @@
                     background-position: center;
                     background-attachment: fixed;
                 }
+
+                @media (max-width: 640px) {
+                    .hero__container{
+                        background-image: linear-gradient(
+                        rgba(0,0,0, 0.7)50%, rgb(0,0, 0 , 0.7)50%
+                    ) ,url(imgs/bg_img.jpg)  ;
+                    }
+                }
                 
                 .box_card{
                     position: relative;
@@ -309,7 +317,7 @@
                                 <span class=" text-[#ee8f00]">Trusted</span> Logistics
                             </h1>
     
-                            <p class="w-full px-2 md:w-96">
+                            <p class="w-full px-2 md:w-96 text-stone-200">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere excepturi optio numquam praesentium temporibus delectus
                             </p>
     
@@ -934,7 +942,7 @@
                                         <!-- address text -->
                                         <div>
                                             <h4 class="text-white text-xl font-bold ">Email Address </h4>
-                                            <p>hello@awesomesite.com</p>
+                                            <p><a href="#">hello@awesomesite.com</a> </p>
                                         </div>
 
                                     </div>
