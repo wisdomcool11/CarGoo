@@ -159,10 +159,12 @@
                 @media (max-width: 640px) {
                     .hero__container{
                         background-image: linear-gradient(
-                        rgba(0,0,0, 0.6)50%, rgb(0,0, 0 , 0.6)50%
+                        rgba(0,0,0, 0.5)50%, rgb(0,0, 0 , 0.5)50%
                     ) ,url(imgs/bg_img.jpg)  ;
-
-                    background-attachment: fixed;
+                        background-size: cover;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-attachment: fixed;
                     }
                 }
                 
@@ -1185,18 +1187,19 @@
 
             </section>
 
-            <footer class="bg-stone-800 py-20 px-2 md:px-8 w-full h-screen">
+            <footer class="bg-stone-800 py-20 px-2 md:px-8 w-full h-full md:h-screen ">
                 <!-- top footer -->
-                <div class="flex flex-col md:grid md:grid-cols-4 ">
+
+                <div class="flex flex-col justify-center items-center text-center md:grid md:grid-cols-4 gap-12 pb-10 ">
 
                     <!-- first section -->
-                    <div class="w-full h-full text-stone-200 flex flex-col space-y-8 ">
+                    <div class=" w-full h-full text-stone-200 flex flex-col items-center  justify-center space-y-5 ">
 
-                        <div class="flex justify-start items-center gap-3 items-center md:px-2 h-full ">
+                        <div class="flex justify-start items-center gap-3 items-center md:px-2 h-full text-center ">
                             
                             <i class="fa-solid fa-location-dot text-[#ee8f00] text-lg text-5xl md:text-4xl "> </i>
 
-                            <div class="flex flex-col">
+                            <div class="flex flex-col ">
                                 <h1 class="font-['PT Sans', sans-serif] font-bold text-md text-4xl  ">
                                     CarGoo
                                 </h1>
@@ -1208,12 +1211,12 @@
     
                         </div>
 
-                        <p class="leading-8 md:leading-10 text-sm md:text-base ">
+                        <p class="leading-7 md:leading-8 text-sm md:text-base ">
                             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus qui ad aliquam rerum! Architecto amet id aperiam, totam nemo debitis.
                         </p>
 
                         <!-- footer social medies -->
-                        <div class="w-full flex justify-start items-center gap-3 ">
+                        <div class="w-full flex justify-center md:justify-start items-center gap-3 ">
                             <a href="#"><i class="fa-brands fa-facebook social-media-footer"></i></a>
                             <a href="#"><i class="fa-brands fa-twitter social-media-footer"></i></a>
                             <a href="#"><i class="fa-brands fa-youtube social-media-footer"></i></a>
@@ -1222,25 +1225,101 @@
                     </div>
 
                     <!-- second footer section -->
-                    <div>
+                    <div class=" w-full h-full space-y-7">
+
+                        <h3 class=" font-['PT Sans', sans-serif] font-bold text-md text-2xl text-white ">
+                            Our Services
+                        </h3>
+        
+                        <ul class=" text-stone-200 text-sm md:text-base space-y-3 list-image-[url(../imgs/icons/check-mark.png)] list-inside font-semibold">
+                            <li><a href="#">Export & import</a></li>
+                            <li><a href="#">Domestic Logistic</a></li>
+                            <li><a href="#">Customer Clearance</a></li>
+                            <li><a href="#">Trucking Feight</a></li>
+                            <li><a href="#">Air Freight</a></li>
+                            <li><a href="#">Ocean Feight </a></li>
+                        </ul>
+                    </div>
+
+
+                    <!-- Third footer section -->
+                    <div class=" w-full h-full space-y-7">
+
+                        <h3 class=" font-['PT Sans', sans-serif] font-bold text-md text-2xl text-white ">
+                            Our Support
+                        </h3>
+        
+                        <ul class=" text-stone-200 text-sm md:text-base space-y-3 list-image-[url(../imgs/icons/check-mark.png)] list-inside font-semibold">
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- forth footer section -->
+                    <div class="w-full h-full space-y-7">
+
+                        <h3 class=" font-['PT Sans', sans-serif] font-bold text-md text-2xl text-white ">
+                            Contact Info
+                        </h3>
+        
+                       <!-- contact info content -->
+                       <div class="pl-1 md:pl-3 space-y-6  mt-4">
+
+                            <div class="flex flex-col md:flex-row justify-center md:justify-start  gap-4 ">
+                                <!-- Address div -->
+                                <i class="fa-solid fa-house-user text-[#ee8f00] text-3xl md:text-2xl"></i>
+
+                                <!-- address text -->
+                                <div>
+                                    <h4 class="text-white text-sm md:text-xl font-bold ">Address </h4>
+                                    <p class="text-sm md:text-md text-[#ee8f00] ">99 Roving St., Big City, PKU 23456</p>
+                                </div>
+
+                            </div>
+                            
+                            <div class="flex flex-col md:flex-row justify-center md:justify-start gap-4 ">
+                                <!-- phone number div -->
+
+                                <i class="fa-solid fa-phone text-[#ee8f00] text-3xl md:text-2xl"></i>
+
+                                <!-- address text -->
+                                <div>
+                                    <h4 class="text-white text-sm md:text-xl font-bold ">Phone Number </h4>
+                                    <p class="text-sm md:text-md text-[#ee8f00] ">123-234-1234</p>
+                                </div>
+
+                            </div>
+                            
+                            <div class="flex flex-col md:flex-row justify-center md:justify-start gap-4 ">
+                                <!-- phone number div -->
+
+                                <i class="fa-regular fa-envelope text-[#ee8f00] text-3xl md:text-2xl"></i>
+
+                                <!-- address text -->
+                                <div>
+                                    <h4 class="text-white text-sm md:text-xl font-bold ">Email Address </h4>
+
+                                    <p class="text-sm md:text-md text-[#ee8f00]">
+                                        hello@awesomesite.com
+                                    </p>
+                                </div>
+
+                            </div>
+
+                        </div>
 
                     </div>
+
                 </div>
 
                 <!-- down footer -->
-                <div>
-                    <h3>
-                        Our Services
-                    </h3>
-
-                    <ul>
-                        <li><a href="#">Export & import</a></li>
-                        <li><a href="#">Domestic Logistic</a></li>
-                        <li><a href="#">Customer Clearance</a></li>
-                        <li><a href="#">Trucking Feight</a></li>
-                        <li><a href="#">Air Freight</a></li>
-                        <li><a href="#">Ocean Feight </a></li>
-                    </ul>
+                <div class="border-t-2 border-slate-50 pt-10 flex justify-center items-center ">
+                    <p class="text-gray-50 text-xs md:text-sm capitalized tracking-wide ">
+                        Copyright 2022 &copy; All Right Resevered Design by WizzyBaby
+                    </p>
                 </div>
             </footer>
 
