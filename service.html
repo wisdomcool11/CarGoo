@@ -221,7 +221,7 @@
                 }
 
                 .testimonial_wrap{
-                    @apply w-full md:w-1/3 space-y-5 border border-t-2 border-l-2 border-r-2 border-b-0 border-t-[#ee8f00] rounded rounded-lg  shadow-lg p-7
+                    @apply w-full md:w-1/3 space-y-5 border border-t-2 border-l-2 border-r-2 border-b-0 border-t-[#ee8f00] rounded rounded-lg  shadow-lg p-7 hover:bg-stone-800  leading-10 hover:text-white transition ease-in duration-300
                 }
 
                 /* section 8 */
@@ -267,7 +267,16 @@
 
                 /* rating card in section 3 */
                 .rating-card{
-                    @apply  w-[250px]  md:w-full p-6 flex flex-col justify-center items-center gap-2  
+                    @apply  w-[15.625rem]  md:w-full p-6 flex flex-col justify-center items-center gap-2  
+                }
+
+                .partner_img{
+                   @apply w-[10rem] md:w-[13.75rem]
+                }
+
+                /* price plan card */
+                .price-plan{
+                    @apply bg-stone-800 text-white h-full md:h-[37.5rem] w-[18.75rem] md:w-[23.75rem] p-6  rounded-lg flex flex-col justify-center items-center gap-8 shadow-lg
                 }
 
             }
@@ -321,7 +330,7 @@
 
                                 <li class="list_style"><a href="#" class=" md:px-4 ">Blog</a></li>
 
-                                <li class="list_style"><a href="#"  class=" md:px-4 ">Contact</a></li>
+                                <li class="list_style"><a href="contact_us.html"  class=" md:px-4 ">Contact</a></li>
 
                             </ul>
                         </nav>
@@ -331,16 +340,16 @@
                     <!--nav button -->
                     <div class=" flex flex-row justify-between items-center md:px-4 w-42 text-xs md:text-base md:w-80 gap-1 ">
 
-                        <button class=" py-2 px-3 md:px-6  hover:bg-[#ee8f00] hover:text-stone-800 hover:font-semibold  hover:rounded-full transform hover:scale-[1.03] active:translate-y-[4px] transition ease-in-out duration-150  "> 
+                        <a href="#" class=" py-2 px-3 md:px-6  hover:bg-[#ee8f00] hover:text-stone-800 hover:font-semibold  hover:rounded-full transform hover:scale-[1.03] active:translate-y-[4px] transition ease-in-out duration-150  "> 
                             Sign In
                             <i class="fa-solid fa-right-to-bracket"></i>
-                        </button>
+                        </a>
 
-                        <button class=" py-2 px-3 md:px-6 bg-[#ee8f00] hover:bg-transparent hover:text-white text-stone-800 font-semibold active:text-[#ee8f00] md:mx-2 rounded-full transform hover:scale-[1.03] active:translate-y-[4px] transition ease-in-out duration-150  ">
+                        <a href="contact_us.html" class=" py-2 px-3 md:px-6 bg-[#ee8f00] hover:bg-transparent hover:text-white text-stone-800 font-semibold active:text-[#ee8f00] md:mx-2 rounded-full transform hover:scale-[1.03] active:translate-y-[4px] transition ease-in-out duration-150  ">
                             Contact Us
 
                             <i class="fa-solid fa-phone"></i> <!--phone icon -->
-                        </button>
+                        </a>
 
                     </div>
 
@@ -391,7 +400,7 @@
 
                 <div class="w-full flex flex-col justify-center items-center space-y-10 ">
 
-                    <h4 class=" font-extrabold text-[#ee8f00] text-sm tracking-widest uppercase ">
+                    <h4 class=" font-extrabold text-[#ee8f00] text-sm tracking-[6px] uppercase ">
                         Why Chose Us
                     </h4>
                         
@@ -626,7 +635,7 @@
                 <div class="flex flex-col md:flex-row gap-4">
 
                     <div class="flex flex-col gap-5 w-full">
-                        <h4 class="font-extrabold text-[#ee8f00] text-sm tracking-widest uppercase ">
+                        <h4 class="font-extrabold text-[#ee8f00] text-sm tracking-[6px] uppercase ">
                             Testimonials
                         </h4>
 
@@ -745,15 +754,149 @@
                         </div>
                     </div>
 
-
                 </div>
 
             </section>
 
+            <!-- partnership -->
+            <section class="bg-stone-150 py-20 px-2 w-full h-full md:h-[400px] flex flex-col md:grid grid-cols-5 justify-center items-center space-x-6  space-y-6 md:space-y-0  mb-10">
+                <img src="imgs/icons/Partner-1.png" alt="logoipium image" class="partner_img">
+                <img src="imgs/icons/Partner-2.png" alt="logoipium image" class="partner_img">
+                <img src="imgs/icons/Partner-3.png" alt="logoipium image" class="partner_img">
+                <img src="imgs/icons/Partner-4.png" alt="logoipium image" class="partner_img">
+                <img src="imgs/icons/Partner-5.png" alt="logoipium image" class="partner_img">
+            </section>
+
+            <!-- price plan section  -->
+            <section class="bg-stone-150 py-20 px-2 md:px-2 w-full h-full flex flex-col md:flex-row justify-center items-center gap-y-20 ">
+
+                <!-- Basic plan card wrapper -->
+                <div class="w-full md:w-2/3 flex flex-col md:flex-row gap-y-8 md:gap-4 justify-center items-center ">
+                    <!-- price plan card -->
+                    <div class="price-plan  ">
+
+                        <div class="space-y-4 "> <!--- top card -->
+                            <h4 class=" text-xl md:text-3xl font-bold text-[#ee8f00] ">Basic Plan</h4>
+    
+                            <h2 class="text-3xl md:text-6xl font-bold ">
+                                $39.<sub class="text-[#ee8f00] hover:text-stone-600">00 / km</sub>  
+                            </h2>
+
+                            <p class="text-stone-500" >
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam iaculis vulputate dui at fringilla.
+                            </p>
+                        </div>
+
+                        <!-- line across -->
+                        <div class="w-full bg-[#ee8f00] h-1 "></div>
+
+                        <!-- bottom card -->
+                        <div>
+                            <ul class="text-stone-500 text-sm md:text-lg space-y-3 list-image-[url(../imgs/icons/check-mark.png)] list-inside font-semibold">
+                                <li>Etiam iaculis vulputate</li>
+                                <li>Pellentesque volutpat ipsum dolor</li>
+                                <li>Pellentesque volutpat ipsum dolor</li>
+                                <li>venenatis dolor</li>
+                            </ul>
+
+                             <!-- button -->
+                             <div class=" flex flex-row justify-start items-center w-full md:w-80 text-xs md:text-base md:w-80 gap-3">
+        
+                                <a href="#" class=" text-[#ee8f00] text-lg py-3 px-3 md:py-4 md:px-4 hover:font-semibold rounded-lg transform hover:scale-[0.9] active:translate-y-[4px] font-bold hover:text-stone-200  transition ease-in-out duration-150  "> 
+                                    
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                    View Pricing
+
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    
+                    <!-- price plan card 2 -->
+                    <div class="bg-white price-plan  ">
+
+                        <div class="space-y-4 "> <!--- top card -->
+                            <h4 class=" text-xl md:text-3xl font-bold text-[#ee8f00] ">Basic Plan</h4>
+    
+                            <h2 class="text-stone-800 text-3xl md:text-6xl font-bold ">
+                                $79.<sub class="text-[#ee8f00] hover:text-stone-600">00 / km</sub>  
+                            </h2>
+
+                            <p class="text-stone-500" >
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam iaculis vulputate dui at fringilla.
+                            </p>
+                        </div>
+
+                        <!-- line across -->
+                        <div class="w-full bg-[#ee8f00] h-1 "></div>
+
+                        <!-- bottom card -->
+                        <div>
+                            <ul class="text-stone-500 text-sm md:text-lg space-y-3 list-image-[url(../imgs/icons/check-mark.png)] list-inside font-semibold">
+                                <li>Etiam iaculis vulputate</li>
+                                <li>Pellentesque volutpat ipsum dolor</li>
+                                <li>Pellentesque volutpat ipsum dolor</li>
+                                <li>venenatis dolor</li>
+                            </ul>
+
+                             <!-- button -->
+                             <div class=" flex flex-row justify-start items-center w-full md:w-80 text-xs md:text-base md:w-80 gap-3">
+        
+                                <a href="#" class=" text-[#ee8f00] text-lg py-3 px-3 md:py-4 md:px-4 hover:font-semibold rounded-lg transform hover:scale-[0.9] active:translate-y-[4px] font-bold hover:text-stone-200  transition ease-in-out duration-150  "> 
+                                    
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                    View Pricing
+
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- price context -->
+                <div class="w-full md:w-1/3">
+                    <div class="flex flex-col gap-4">
+
+                        <div class="flex flex-col gap-5 w-full">
+                            <h4 class="font-extrabold text-[#ee8f00] text-sm tracking-[6px] uppercase ">
+                                Pricing Plan
+                            </h4>
+    
+                            <h2 class="text-4xl md:text-6xl text-stone-800 font-bold " >
+                                We Have <span class=" text-[#ee8f00] tracking-[4px]">Best Price </span> For You
+                            </h2>
+                        </div>
+    
+                        <div class="w-full space-y-5">
+    
+                            <p class="text-stone-500">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam iaculis vulputate dui at fringilla. Pellentesque volutpat ipsum dolor, vitae venenatis dolor posuere quis.
+                            </p>
+    
+                            <!-- button -->
+                            <div class=" flex flex-row justify-start items-center w-full md:w-80 text-xs md:text-base md:w-80 gap-3">
+        
+                                <button class=" py-3 px-3 md:py-4 md:px-4 w-28 md:w-40 bg-[#ee8f00] hover:border-2 hover:border-[#ee8f00] hover:bg-transparent hover:font-semibold rounded-lg transform hover:scale-[0.8] active:translate-y-[4px] text-white font-bold hover:text-stone-800  transition ease-in-out duration-150  "> 
+                                    View Pricing
+                                </button>
+                            </div>
+
+                        </div>
+    
+                    </div>
+                </div>
+
+            </section><!--end of price plan section -->
+
             <footer class="bg-stone-800 pt-20 px-2 md:px-8 w-full h-full  ">
                 <!-- top footer -->
 
-                <div class="flex flex-col justify-center items-center text-center md:grid md:grid-cols-4 gap-12 pb-10 ">
+                <div class="flex flex-col justify-center items-center text-center md:text-left md:grid md:grid-cols-4 gap-12 pb-10 ">
 
                     <!-- first section -->
                     <div class=" w-full h-full text-stone-200 flex flex-col items-center  justify-center space-y-5 ">
