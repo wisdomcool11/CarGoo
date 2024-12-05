@@ -26,3 +26,17 @@ ScrollReveal().reveal('#card__one, #card__two',{delay: 500, origin: 'bottom' , i
 
 
 
+
+// Accordion
+
+const faqs = document.querySelectorAll('.js-faq');
+const faqSing = document.querySelector('.js-faq-sign');
+
+faqs.forEach(faq =>{
+    faq.addEventListener('click', ()=>{
+        faq.classList.toggle('active');
+        
+    })
+})
+
+
