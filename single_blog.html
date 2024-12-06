@@ -310,7 +310,9 @@
                     }
                 }
 
-
+                .para{
+                    @apply text-sm md:text-base leading-[1.5rem] md:leading-[2rem] text-stone-500 font-semibold text-justify
+                }
 
             }
         }
@@ -391,27 +393,27 @@
             </div>
 
               <!-- Hero section -->
-              <section class=" w-full my-14 space-y-14  ">   
+            <section class=" w-full my-14 space-y-14  ">   
 
                 <div class=" w-full h-[25rem] hero__container flex  flex-col md:flex-row gap-7 md:gap-1 justify-center items-center border rounded-b-xl py-24 md:py-0">
                     <!-- hero section with a huge image and content on it -->
                      
                     <div class=" w-full text-white pl-6 md:pl-6 space-y-36 "> 
 
-                        <div class=" w-full flex flex-col gap-8">
+                        <div class=" w-full flex flex-col gap-8 ">
 
                             <!-- hero content -->
 
-                            <h1 class="text-4xl md:text-6xl text-white font-extrabold  ">
-                                Our
-                                <span class=" text-[#ee8f00]">Blog</span>
+                            <h1 class="text-4xl md:text-6xl text-white font-bold md:font-extrabold leading-normal ">
+                                <span class=" text-[#ee8f00]">CarGoo Cargo</span> starts flights to Bangkok, Thailand, Hanoi
                             </h1>
 
 
                             <div>
                                 <a href="index.html"><span class=" text-[#ee8f00] font-semibold text-base hover:underline ">Home</span></a> /
-                                <a href="#" class="text-base font-extrabold">Blog</a>
+                                <a href="#" class="text-base font-extrabold text-white">Single Blog</a>
                             </div>
+
                         </div>
 
 
@@ -420,186 +422,84 @@
 
             </section>
 
+            <section class="bg-stone-150 py-20 px-2 md:px-4 w-full h-full flex flex-col md:flex-row  gap-4 ">
+                <!-- side bar -->
+                <aside class="w-full md:w-1/3 h-full px-2 space-y-6">
 
-            <!-- section 3 about us -->
-            <section class="bg-stone-150 py-20 px-2 md:px-8 w-full h-full " >
+                    <!-- box 1 -->
+                    <div class=" w-full h-full space-y-7 bg-stone-800 flex flex-col justify-center items-center  p-8 rounded-xl">
 
-                <div class="w-full flex flex-col justify-center items-center space-y-7 ">
+                        <h3 class=" text-[#ee8f00]  font-['PT Sans', sans-serif] font-bold text-md text-2xl  ">
+                            Recent Services
+                        </h3>
+        
+                        <ul class=" text-stone-200 text-sm md:text-base space-y-5 list-image-[url(../imgs/icons/check-mark.png)] list-inside font-semibold">
+                            <li><a href="#">Customer Clearance</a></li>
+                            <li><a href="#">Ocean Freight</a></li>
+                            <li><a href="#">Air Freight</a></li>
+                            <li><a href="#">Trucking Freight</a></li>
+                            <li><a href="#">Export & Import</a></li>
+                            <li><a href="#">Other Services </a></li>
+                        </ul>
+                    
+                    </div>
 
-                    <h4 class=" font-semibold text-[#ee8f00] text-sm tracking-[5px] uppercase ">
-                        Our Office
-                    </h4>
-                        
-                    <h2 class="w-full md:w-[55%] text-4xl md:text-6xl font-extrabold leading-10 text-center ">
-                        Latest 
-                        <span class=" text-[#ee8f00]">News</span>
-                    </h2>
+                    <!-- box 2 -->
+                    <div class="-full h-full space-y-7 bg-stone-800 flex flex-col justify-center items-center  p-8 rounded-xl">
 
-                    <!-- section content -->
-                    <div class="w-full md:w-[60%] text-left md:text-justify space-y-4 ">
+                        <h3 class="text-xl md:text-2xl font-bold text-white flex justify-center items-center text-center  " >
+                            Ask more about the services you need and get best offer.
+                        </h3>
 
-                        <p class="w-full text-base text-center px-2 text-stone-500 ">
+                        <div class=" flex flex-row justify-center items-center w-full md:w-80 text-xs md:text-base md:w-80 gap-3">
+    
+                            <button class=" py-3 px-3 md:py-4 md:px-4 w-28 md:w-40 bg-[#ee8f00] hover:border-2 hover:border-[#ee8f00] hover:bg-transparent hover:font-semibold hover:text-[#ee8f00] rounded-lg transform hover:scale-[0.8] active:translate-y-[4px] transition ease-in-out duration-150  "> 
+                                Contact Us
+                            </button>
+                        </div>
 
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam iaculis vulputate dui at fringilla. Pellentesque volutpat ipsum dolor, vitae venenatis dolor posuere quis.
+                    </div>
 
+                    <!-- box 3 -->
+                    <div class="-full h-full space-y-7 bg-stone-800 flex flex-col justify-center items-center  p-8 py-12  rounded-xl">
+
+                        <h3 class="text-2xl md:text-2xl font-bold text-[#ee8f00] flex justify-center items-center text-center  " >
+                            Follow Us On
+                        </h3>
+
+                        <!-- Social Medias -->
+                        <div class="w-full flex justify-center md:justify-center items-center gap-3 ">
+                            <a href="#"><i class="fa-brands fa-facebook social-media-footer"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter social-media-footer"></i></a>
+                            <a href="#"><i class="fa-brands fa-youtube social-media-footer"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram social-media-footer"></i></a>
+                        </div>
+
+                    </div>
+
+                </aside>
+
+                <!-- main body -->
+                <div class="w-full md:w-2/3 h-full space-y-6 ">
+                    
+                    <!-- img -->
+                    <img src="imgs/icons/warehouse-standard.jpg" alt="company image hawk view">
+
+                    <!-- content -->
+                    <div class="space-y-4">
+                        <p class="para">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras maximus metus elementum purus pretium mattis. In at hendrerit mauris. Donec pellentesque tortor eget urna imperdiet, a ultricies diam sollicitudin. Nullam faucibus hendrerit nunc, placerat mollis tortor posuere sit amet. Proin congue augue quis sagittis condimentum. Morbi varius consequat porta. Aenean rutrum, ante eu placerat sollicitudin, massa turpis hendrerit dolor, viverra lobortis sem ante eu erat. Phasellus ultricies sapien ex, at tempor est blandit non. Maecenas ligula augue, consequat sed ex non, tempor vestibulum odio. Cras nec dictum metus. Fusce iaculis tincidunt eros, et fermentum nisl porttitor at. In dignissim nulla non sem aliquam, sit amet tincidunt justo vestibulum. Integer enim libero, imperdiet vel turpis ut, efficitur tincidunt tortor. Aliquam fringilla ipsum sit amet magna fermentum ullamcorper. Suspendisse volutpat turpis at ex faucibus vulputate. Vestibulum suscipit non felis id tempor.
                         </p>
+
+                        <p class="para">
+                            Nam consequat nunc convallis, molestie purus quis, porttitor justo. Nullam tortor lorem, vulputate varius sapien in, pharetra gravida justo. Suspendisse rutrum eleifend odio non bibendum. Maecenas quis luctus nibh, porttitor vulputate augue. Nulla nec lectus egestas, pharetra enim vel, sollicitudin justo. Sed bibendum turpis in justo consequat cursus. Morbi vestibulum dui purus, vitae luctus elit semper at. Curabitur id risus eleifend, semper nunc in, dictum nibh. Pellentesque semper imperdiet nibh vitae blandit.
+                        </p>
+
+                        <p class="para">
+                            Ut luctus quam urna, ac iaculis erat ornare imperdiet. Nam eget iaculis felis. Donec tincidunt maximus ex eu egestas. Nulla facilisi. Nunc sit amet mattis nibh, a posuere sapien. Nulla est enim, auctor sit amet eros id, interdum pellentesque eros. Quisque at magna dictum, dictum risus et, pharetra augue. Proin ac viverra arcu. Nam turpis ipsum, tincidunt in ultrices in, laoreet ac ligula. Mauris bibendum malesuada sagittis.
+                        </p>
+                    
                     </div>
-                </div>
-
-            </section>
-
-            <!-- consulting service -->
-            <section class=" w-full my-14 space-y-14  ">   
-
-                <div class=" w-full hero__container flex  flex-col md:flex-row-reverse gap-7 md:gap-1 justify-center items-center border rounded-b-xl py-24 md:py-0">
-                    <!-- hero section with a huge image and content on it -->
-                     
-                    <div class=" w-full text-white pl-6 md:pl-6 space-y-36 "> 
-
-                        <div class=" w-full flex flex-col gap-8">
-    
-                            <h1 class="text-4xl md:text-6xl text-white font-bold  ">
-                                Consult The Service You
-                                <span class=" text-[#ee8f00]">Need Now!</span>
-                            </h1>
-    
-                            <p class="w-full px-2 md:w-[80%]">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere excepturi optio numquam praesentium temporibus delectus
-                            </p>
-
-                            <ul class="w-full flex flex-col md:flex-row justify-around items-start text-md md:text-lg font-semibold md:font-bold list-image-[url(imgs/icons/check-mark.png)] list-inside  gap-3 ">
-                                <li class="list"><a href="#">Fast Delivery</a></li>
-                                <li class="list"><a href="#">Competitive Price </a></li>
-                                <li class="list"><a href="#">Wide Delivery Area</a></li>
-                            </ul>
-    
-                            <!-- Hero button wrapper -->
-                            <div class=" flex flex-row justify-start items-center w-full md:w-80 text-xs md:text-base md:w-80 gap-3">
-    
-                                <button class=" py-3 px-3 md:py-4 md:px-4 w-28 md:w-40 bg-[#ee8f00] hover:border-2 hover:border-[#ee8f00] hover:bg-transparent hover:font-semibold rounded-lg transform hover:scale-[0.8] active:translate-y-[4px] transition ease-in-out duration-150  "> 
-                                    About Us
-                                </button>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <!-- hero img -->
-                    <div class="w-full h-full relative hidden md:block ">
-                        <img src="imgs/F2.png" alt="ship Delivery personnel" class="object-contain object-left ">
-                    </div>
-
-                </div> <!-- end of hero section -->
-
-            </section>
-
-            <!-- FAQ section -->
-            <section class="bg-stone-150 py-20 px-2 md:px-6 w-full h-full flex justify-center items-center flex-col md:grid md:grid-cols-2 gap-12">
-                
-                <!-- Faq wrapper content -->
-                <div class="w-full h-full space-y-10">
-                    <!-- top faq content -->
-                    <div class="w-full flex flex-col justify-center md:items-left space-y-7 ">
-
-                        <h4 class=" font-semibold text-[#ee8f00] text-sm tracking-[5px] uppercase text-center md:text-left ">
-                            Clients Inquiries
-                        </h4>
-                            
-                        <h2 class="w-full md:w-full text-4xl md:text-6xl font-bold leading-10 text-center md:text-left ">
-                            Frequently Asked
-                            <span class=" text-[#ee8f00]">Question</span>
-                        </h2>
-    
-                        <!-- section content -->
-                        <div class="w-full md:w-[60%] text-left md:text-justify space-y-4 ">
-    
-                            <p class="w-full text-base text-center md:text-left px-2 text-stone-500 ">
-    
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam iaculis vulputate dui at fringilla. Pellentesque volu.
-    
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- bottom faq container -->
-                    <div class="bg-stone-800 w-full md:w-[32.5rem]">
-
-                        <div class="faq js-faq ">
-                            <!-- question -->
-                            <div class="question">
-                                <h3 class="question-h3 ">
-                                    Nam ut dui congue posuere lectus non?
-                                </h3>
-                                <span class="faq-sign js-faq-sign " >+</span>
-                            </div>
-                            <!-- answer -->
-                            <div class="answer">
-                                <p class="answer-p">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
-                                </p>
-                            </div>
-
-                        </div>
-                       
-                        <div class="faq js-faq ">
-                            <!-- question -->
-                            <div class="question">
-                                <h3 class=" question-h3 ">
-                                    Phasellus ac turpis ac erat aliquam?
-                                </h3>
-                                <span class="faq-sign js-faq-sign " >+</span>
-                            </div>
-                            <!-- answer -->
-                            <div class="answer">
-                                <p class="answer-p">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
-                                </p>
-                            </div>
-
-                        </div>
-                        
-                        <div class="faq js-faq ">
-                            <!-- question -->
-                            <div class="question">
-                                <h3 class="question-h3 ">
-                                    Maecenas eu mauris mattis?
-                                </h3>
-                                <span class="faq-sign js-faq-sign " >+</span>
-                            </div>
-                            <!-- answer -->
-                            <div class="answer">
-                                <p class="answer-p">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
-                                </p>
-                            </div>
-
-                        </div>
-                        
-                        <div class="faq js-faq ">
-                            <!-- question -->
-                            <div class="question">
-                                <h3 class="question-h3 ">
-                                    Proin molestie nisl sit amet arcu pulvinar?
-                                </h3>
-                                <span class="faq-sign js-faq-sign " >+</span>
-                            </div>
-                            <!-- answer -->
-                            <div class="answer">
-                                <p class="answer-p">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
-                                </p>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- image section -->
-                <div class="w-full h-full p-2">
-                    <img src="imgs/icons/P11-containers-warehouse.jpg" alt="shipping container pack yard" class="w-full h-full rounded-xl object-cover object-center ">
                 </div>
 
             </section>
@@ -640,6 +540,8 @@
                             <a href="#"><i class="fa-brands fa-youtube social-media-footer"></i></a>
                             <a href="#"><i class="fa-brands fa-instagram social-media-footer"></i></a>
                         </div>
+                        
+                    </div>
 
                     <!-- second footer section -->
                     <div class=" w-full h-full space-y-7">
