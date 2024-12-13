@@ -6,7 +6,9 @@
     <title>CarGoo</title>
 
     <!-- scroll Reveal -->
-    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- <script src="https://unpkg.com/scrollreveal"></script> -->
+    <!-- AOS animation on scroll  -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     
     <!-- fontawesome -->
@@ -257,6 +259,79 @@
                     @apply border-2 h-[40px] md:h-[60px] w-full p-2 md:p-4 rounded-lg  border-[#ee8f00] bg-white ;
                 }
 
+                #form{
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                }
+
+
+                .input-control{
+                    width: 100%;
+                    padding: 3px;
+                }
+
+                .hold-control{
+                    width: 100%;
+                    display: flex;
+                }
+
+                .input-control input{
+                    border: 3px solid #ee8f00;
+                    padding: 1rem 0.6rem;
+                    width: 100%;
+                    border-radius: 8px;
+                    font-size: 1rem;
+                    color: gray;
+                    font-weight: 600;
+                    outline: none;
+                }
+
+                .input-control #textArea{
+                    width: 100%;
+                    height: 180px;
+                    border: 3px solid #ee8f00;
+                    border-radius: 8px;
+                    font-size: 1rem;
+                    color: gray;
+                    font-weight: 600;
+                    outline: none;
+                    padding: 5px 10px;
+                }
+
+                #form-btn{
+                    width: 180px;
+                    border-radius: 10px;
+                    padding: 8px;
+                    color: #292524;
+                    background-color: #ee8f00;
+                    font-weight: 500;
+                }
+
+                .input-control .error{
+                    color: rgb(250, 24, 92);
+                    font-size: 12px;
+                    /* height: 16px; */
+                    padding: 5px;
+                }
+
+                .input-control.error input {
+                    border-color: rgb(250, 24, 92);
+                }
+
+                .input-control.success input{
+                    border-color: rgb(4, 194, 4);
+                }
+
+                @media (max-width: 687px ) {
+                    .hold-control{
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                    }
+                }
+
             }
         }
     </style>
@@ -272,7 +347,7 @@
 
             <div >
 
-                <header class="relative bg-stone-800 w-full rounded rounded-xl p-2 text-white font-normal flex justify-between">
+                <header class="relative bg-stone-800 w-full rounded rounded-xl p-2 text-white font-normal flex justify-between" data-aos="fade-down" data-aos-easing ="linear" data-aos-duration="1500" >
 
                     <!-- holds the page title and the nav container together -->
                     <div class="flex flex-col md:flex-row items-start justify-center md:items-center md:gap-14   px-2  md:w-[600px]">
@@ -286,7 +361,7 @@
                                 <h1 class="font-['PT Sans', sans-serif] font-bold text-md sm:text-xl md:text-xl ">
                                     CarGoo
                                 </h1>
-                            </a> 
+                            </a>
 
                         </div>
     
@@ -298,25 +373,24 @@
                                 <li class="list_style "><a href="index.html" class=" md:px-4  "> Home </a>
                                 </li>
 
-                                <li class="list_style"><a href="about_us.html" >About</a>
+                                <li class="list_style"><a href="about_us.html" class=" md:px-4  " >About</a>
                                 </li>
 
-                                <li class="list_style"><a href="service.html" class=" md:px-4 " >Services</a></li>
+                                <li class="list_style"><a href="service.html" class=" md:px-4  " >Services</a></li>
 
                                 <li class="list_style"><a href="blog.html" class=" md:px-4 ">Blog</a></li>
 
-                                <li class="list_style"><a href="contact_us.html"  class=" md:px-4 text-white hover:text-[#ee8f00]">Contact</a></li>
+                                <li class="list_style"><a href="contact_us.html"  class=" md:px-4  text-white hover:text-[#ee8f00]">Contact</a></li>
 
                             </ul>
                         </nav>
-
+                        
                     </div>
 
                     <!--nav button -->
-
                     <div class=" flex flex-row justify-between items-center md:px-4 w-42 text-xs md:text-base md:w-80 gap-1 ">
 
-                        <a href="#" class=" py-2 px-3 md:px-6  hover:bg-[#ee8f00] hover:text-stone-800 hover:font-semibold  hover:rounded-full transform hover:scale-[1.03] active:translate-y-[4px] transition ease-in-out duration-150  "> 
+                        <a href="#" class=" py-2 px-3 md:px-6  hover:bg-[#ee8f00] hover:text-stone-800 hover:font-semibold  hover:rounded-full transform hover:scale-[1.03] active:translate-y-[4px] transition ease-in-out duration-150 " > 
                             Sign In
                             <i class="fa-solid fa-right-to-bracket"></i>
                         </a>
@@ -347,19 +421,19 @@
                      
                     <div class=" w-full text-white pl-6 md:pl-6 space-y-36 "> 
 
-                        <div class=" w-full flex flex-col gap-8">
+                        <div class=" w-full flex flex-col gap-8 overflow-hidden">
 
                             <!-- hero content -->
 
-                            <h1 class="text-4xl md:text-6xl text-white font-extrabold  ">
+                            <h1 class="text-4xl md:text-6xl text-white font-extrabold  " data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">
                                 Contact
                                 <span class=" text-[#ee8f00]">Us</span>
                             </h1>
 
 
                             <div>
-                                <a href="index.html"><span class=" text-[#ee8f00] font-semibold text-base hover:underline ">Home</span></a> /
-                                <a href="#" class="text-base font-extrabold">Contact Us</a>
+                                <a href="index.html"><span class=" text-[#ee8f00] font-semibold text-base hover:underline " data-aos="fade-right" data-aos-delay="500" data-aos-duration="1000">Home</span></a> /
+                                <a href="#" class="text-base font-extrabold"data-aos="fade-right" data-aos-delay="500" data-aos-duration="1000">Contact Us</a>
                             </div>
                         </div>
 
@@ -375,14 +449,14 @@
                 <!-- contact info context -->
                 <div class="w-full h-full flex justify-start items-center ">
 
-                    <div class="w-full text-stone-800 space-y-8  px-2 md:pl-3" > <!---content-->
+                    <div class="w-full text-stone-800 space-y-8  px-2 md:pl-3 overflow-hidden" > <!---content-->
     
-                        <h4 class="font-extrabold text-[#ee8f00] text-sm tracking-[5px] uppercase leading-widest ">
+                        <h4 class="font-extrabold text-[#ee8f00] text-sm tracking-[5px] uppercase leading-widest " data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1500">
                             Contact Us
                         </h4>
     
                             
-                        <h2 class="text-3xl md:text-5xl font-bold  ">
+                        <h2 class="text-3xl md:text-5xl font-bold " data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1500">
                             Get In
                             <span class=" text-[#ee8f00]">Touch</span> 
                         </h2>
@@ -390,7 +464,7 @@
                         <!-- section content -->
                         <div class=" w-full  text-left md:text-justify md:pr-2 space-y-4 ">
     
-                            <p class="w-full px-2 text-stone-500 ">
+                            <p class="w-full px-2 text-stone-500 " data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1500">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam iaculis vulputate dui at fringilla. Pellentesque volutpat ipsum dolor, vitae venenatis dolor posuere quis.
                             </p>
 
@@ -399,7 +473,7 @@
                         <!-- company details info -->
                         <div class=" w-full h-full grid grid-cols-2 grid-rows-2 gap-2 md:gap-4 ">
 
-                            <div class="flex flex-col gap-2 ">
+                            <div class="flex flex-col gap-2 " data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1500">
                                 <!-- Address div -->
                                 <i class="fa-solid fa-phone text-[#ee8f00] text-xl md:text-3xl"></i>
                                 <!-- address text -->
@@ -413,7 +487,7 @@
 
                             </div>
 
-                            <div class="flex flex-col gap-2">
+                            <div class="flex flex-col gap-2" data-aos="zoom-in" data-aos-easing="linear" data-aos-delay="200" data-aos-duration="1500">
                                 <!--  Envelope -->
 
                                 <i class="fa-regular fa-envelope text-[#ee8f00] text-xl md:text-3xl"></i>
@@ -422,14 +496,14 @@
                                 <div>
                                     <h4 class="text-stone-800 text-sm md:text-2xl font-bold ">Email Address </h4>
 
-                                    <p class="text-sm md:text-lg text-stone-400 font-semibold text-wrap ">
+                                    <p class="text-sm md:text-lg text-stone-400 font-semibold text-wrap no-underline">
                                         hello@somesite.com
                                     </p>
                                 </div>
 
                             </div>
 
-                            <div class="flex flex-col gap-2  ">
+                            <div class="flex flex-col gap-2  " data-aos="zoom-in" data-aos-easing="linear" data-aos-delay="200" data-aos-duration="1500">
                                 <!--  Website -->
 
                                 <i class="fa-solid fa-earth-americas text-[#ee8f00] text-xl md:text-3xl"></i>
@@ -438,14 +512,14 @@
                                 <div>
                                     <h4 class="text-stone-800 text-sm md:text-2xl font-bold ">Website </h4>
 
-                                    <a href="#" class="text-sm md:text-lg text-stone-400 font-semibold text-wrap border-2 ">
+                                    <a href="#" class="text-sm md:text-lg text-stone-400 font-semibold text-wrap">
                                         www.somesitee.com
                                     </a>
                                 </div>
 
                             </div>
 
-                            <div class="flex flex-col gap-2 pl-5  ">
+                            <div class="flex flex-col gap-2 pl-5  " data-aos="zoom-in" data-aos-easing="linear" data-aos-delay="200" data-aos-duration="1500">
                                 <!-- Address  -->
 
                                 <i class="fa-solid fa-location-dot  text-[#ee8f00] text-xl md:text-3xl"></i>
@@ -468,20 +542,67 @@
                 </div>
 
                 <!-- contact form wrapper -->
-                <div class="w-full h-full flex flex-col md:grid md:grid-cols-2 md:grid-rows-6 md:grid-flow-dense gap-3 md:gap-4  px-4 md:px-full">
+                <!-- <form action="/" id="form" class="w-full h-full flex flex-col md:grid md:grid-cols-2 md:grid-rows-6 md:grid-flow-dense gap-3 md:gap-4  px-4 md:px-full">
 
-                    <input type="text" placeholder="Your Name" class="input-style">
+                    <div class="input-control ">
+                        <input type="text" placeholder="Your Name" class="input-style" id="username" name="username">
+                        <div class="error"></div>
+                    </div>
 
-                    <input type="text" placeholder="Your Email" class="input-style">
+                    <div class="input-control ">
+                        <input type="text" placeholder="Your Email" class="input-style" id="js-email" name="email">
+                        <div class="error"></div>
+                    </div>
 
-                    <input type="text" placeholder="Your Subject" class="input-style col-span-2 row-start-2 row-end-3 ">
+                    <div class="input-control col-span-2 row-start-2 row-end-3">
+                        <input type="text" placeholder="Your Subject" class="input-style " id="js-subject" name="subject">
 
-                    <textarea name="text" placeholder="Your Message..." class ="border-2 col-span-2 row-start-3 row-end-5 rounded-lg border-[#ee8f00] h-[120px] md:h-full" >
+                        <div class="error"></div>
+                    </div>
 
-                    </textarea>
+                    <div class="input-control col-span-2 row-start-3 row-end-5 w-full">
+                        
+                        <div class="error"></div>
 
-                    <button class="bg-[#ee8f00] text-stone-200 text-lg font-bold w-[180px] h-[60px] rounded-md hover:bg-stone-800 transition ease-in duration-300 transform active:translate-y-[4px] ">Send Message</button>
-                </div>
+                        <textarea name="text" placeholder="Your Message..." class ="border-2  rounded-lg border-[#ee8f00] w-full  h-[120px] md:h-full p-2"  id="js-textArea">
+                        </textarea>
+
+                    </div>
+
+
+                    <button type="submit" class="bg-[#ee8f00] text-stone-200 text-lg font-bold w-[180px] h-[60px] rounded-md hover:bg-stone-800 transition ease-in duration-300 transform active:translate-y-[4px] ">
+                        Send Message
+                    </button>
+
+                </form> -->
+
+                <form action="/" id="form">
+                    
+                    <div class="hold-control">
+
+                        <div class="input-control">
+                            <input type="text" placeholder="Your name" id="username" name="username" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1200">
+                            <div class="error"></div>
+                        </div>
+    
+                        <div class="input-control">
+                            <input type="text" placeholder="Your Email" id="email" name="email" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1200">
+                            <div class="error"></div>
+                        </div>
+                    </div>
+
+                    <div class="input-control">
+                        <input type="text" placeholder="Your Subject" id="subject" name="subject" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1200">
+                        <div class="error"></div>
+                    </div>
+
+                    <div class="input-control">
+                        <div class="error"></div>
+                        <textarea name="textArea" id="textArea" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1200"></textarea>
+                    </div>
+
+                    <button type="submit" id="form-btn">Submit</button>
+                </form>
 
             </section>
 
@@ -495,19 +616,26 @@
 
                         <div class=" w-full flex flex-col gap-8">
     
-                            <h1 class="text-4xl md:text-6xl text-white font-bold  ">
+                            <h1 class="text-4xl md:text-6xl text-white font-bold text-center md:text-left " data-aos="fade-up-left " data-aos-easing="linear" deta-aos-delay="100" data-aos-duration="1500">
                                 Consult The Service You
                                 <span class=" text-[#ee8f00]">Need Now!</span>
                             </h1>
     
-                            <p class="w-full px-2 md:w-[80%]">
+                            <p class="w-full px-2 md:w-[80%]" data-aos="fade-up-left " data-aos-easing="linear" deta-aos-delay="200" data-aos-duration="1500">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere excepturi optio numquam praesentium temporibus delectus
                             </p>
 
-                            <ul class="w-full flex flex-col md:flex-row justify-around items-start text-md md:text-lg font-semibold md:font-bold list-image-[url(imgs/icons/check-mark.png)] list-inside  gap-3 ">
-                                <li class="list"><a href="#">Fast Delivery</a></li>
-                                <li class="list"><a href="#">Competitive Price </a></li>
-                                <li class="list"><a href="#">Wide Delivery Area</a></li>
+                            <ul class="w-full flex flex-col md:flex-row justify-around items-start text-md md:text-lg font-semibold md:font-bold list-image-[url(imgs/icons/check-mark.png)] list-inside  gap-3 overflow-hidden">
+                                
+                                <li class="list" data-aos="zoom-in " >
+                                    <a href="truck_freight.html" data-aos="fade-up-left" data-aos-easing="linear" deta-aos-delay="100" data-aos-duration="1500">Fast Delivery</a>
+                                </li>
+                                <li class="list">
+                                    <a href="price_plan.html"data-aos="fade-up-left" data-aos-easing="linear" deta-aos-delay="100" data-aos-duration="1500">Competitive Price </a>
+                                </li>
+                                <li class="list">
+                                    <a href="#" data-aos="fade-up-left"  data-aos-easing="linear" deta-aos-delay="100" data-aos-duration="1500">Wide Delivery Area</a>
+                                </li>
                             </ul>
     
                             <!-- Hero button wrapper -->
@@ -524,7 +652,7 @@
 
                     <!-- hero img -->
                     <div class="w-full h-full relative hidden md:block ">
-                        <img src="imgs/F2.png" alt="ship Delivery personnel" class="object-contain object-left ">
+                        <img src="imgs/F2.png" alt="ship Delivery personnel" class="object-contain object-left " data-aos="fade-up-right" data-aos-easing="linear" data-aos-duration="1500">
                     </div>
 
                 </div> <!-- end of hero section -->
@@ -540,26 +668,26 @@
                     <!-- img section -->
                     <div class="w-full relative text-white ">
     
-                        <img src="imgs/P4.jpg" alt="two Delivery personnel checking their list" class=" h-[300px] md:h-screen w-full object-cover rounded rounded-lg ">
+                        <img src="imgs/P4.jpg" alt="two Delivery personnel checking their list" class=" h-[300px] md:h-screen w-full object-cover rounded rounded-lg " data-aos="zoom-in" data-aos-easing="linear" deta-aos-delay="100" data-aos-duration="1500">
                         
                     </div>
     
                     <div class="w-full   text-stone-800 space-y-10  pl-3 md:pl-14" > <!---content-->
     
-                        <h4 class="font-extrabold text-[#ee8f00] text-sm tracking-[5px] uppercase leading-widest ">
+                        <h4 class="font-extrabold text-[#ee8f00] text-sm tracking-[5px] uppercase leading-widest " data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
                             Why Chose Us
                         </h4>
     
                             
-                        <h2 class="text-3xl md:text-5xl font-bold  ">
+                        <h2 class="text-3xl md:text-5xl font-bold  " data-aos="fade-up" data-aos-easing="linear" deta-aos-delay="100" data-aos-duration="1500">
                             Our Offices
                             <span class=" text-[#ee8f00]">Located</span> All Over The World
                         </h2>
     
                         <!-- section content -->
-                        <div class=" w-full  text-left md:text-justify md:pr-2 space-y-4 ">
+                        <div class=" w-full  text-left md:text-justify md:pr-2 space-y-4 overflow-hidden">
     
-                            <p class="w-full px-2 text-stone-500 ">
+                            <p class="w-full px-2 text-stone-500 " data-aos="fade-up" data-aos-easing="linear" deta-aos-delay="100" data-aos-duration="1500">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam iaculis vulputate dui at fringilla. Pellentesque volutpat ipsum dolor, vitae venenatis dolor posuere quis.
                             </p>
 
@@ -569,7 +697,7 @@
                         <div class=" md:flex flex-col md:flex-row gap-8 w-full space-y-5 "> 
     
                             <!--card 1-->
-                            <div class="bg-stone-800 text-stone-400 shadow-xl rounded rounded-lg flex flex-col  md:w-80 py-12 px-6" > 
+                            <div class="bg-stone-800 text-stone-400 shadow-xl rounded rounded-lg flex flex-col  md:w-80 py-12 px-6" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1500"> 
 
                                 <h3 class="text-[#ee8f00] text-lg md:text-2xl font-bold hover:text-white transition ease-in duration-150" >
                                     Indonesia
@@ -625,7 +753,7 @@
                             </div> <!--end of card 1-->
                             
                             <!--card 2-->
-                            <div class="bg-stone-800 text-stone-400 shadow-xl rounded rounded-lg  flex flex-col  md:w-80 py-12 px-6" > 
+                            <div class="bg-stone-800 text-stone-400 shadow-xl rounded rounded-lg  flex flex-col  md:w-80 py-12 px-6" data-aos="zoom-in" data-aos-easing="linear" deta-aos-delay="100" data-aos-duration="1500"> 
 
                                 <h3 class="text-[#ee8f00] text-lg md:text-2xl font-bold hover:text-white transition ease-in duration-150" >
                                     Indonesia
@@ -685,7 +813,7 @@
             </section>
             
 
-            <footer class="bg-stone-800 pt-20 px-2 md:px-8 w-full h-full md:h-full">
+            <footer class="bg-stone-800 pt-20 px-2 md:px-8 w-full h-full md:h-full" data-aos="fade-up" data-aos-duration="2000">
                 <!-- top footer -->
 
                 <div class="flex flex-col justify-center items-center text-center md:text-left md:grid md:grid-cols-4 gap-12 pb-10 ">
@@ -838,6 +966,10 @@
 
 
     </div>
+
+    <!-- AOS cdn script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <!-- Script -->
     <script src="app.js"></script>
 </body>
