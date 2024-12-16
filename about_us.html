@@ -51,7 +51,7 @@
                 }
 
                 /*special fade in styling  */
-                @media (max-width: 640px ) {
+                @media (max-width: 768px ) {
                     nav{
                     position: absolute;
                     top: 6rem;
@@ -84,10 +84,52 @@
                             transform: translateY(0px);
                         }
                     }
+
+                    .toggle_bar{
+                        position: relative;
+                        width: 30px;
+                        height: 35px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+
+                    .toggle_bar::before{
+                        content: '';
+                        position: absolute;
+                        width: 100%;
+                        height: 3px;
+                        background-color: aliceblue;
+                        transform: translateY(-12px);
+                        box-shadow: 0 12px aliceblue;
+                        transition: transform 300ms ease-in-out, 
+                        box-shadow 300ms ease-in-out;
+                    }
+
+                    .toggle_bar::after{
+                        content: '';
+                        position: absolute;
+                        width: 100%;
+                        height: 3px;
+                        background-color: aliceblue;
+                        transform: translateY(12px);
+                        transition: transform 300ms ease-in-out;
+                    }
+
+                    header.active .toggle_bar::before{
+                        box-shadow: 0 0 aliceblue;
+                        transform: rotate(45deg);
+                        transition: transform 300ms ease-in-out;
+                    } 
+                    header.active .toggle_bar::after{
+                        transform: rotate(315deg);
+                        transition: transform 300ms ease-in-out;
+                    }
+
                 }
  
                 .hero_img{
-                    background-image: url(bg.svg);
+                    background-image: url(imgs/bg_img.jpg);
                     background-repeat: no-repeat;
                     background-size: cover;
                     background-position: center;
@@ -259,6 +301,7 @@
             }
         }
     </style>
+
 </head>
 <body class="bg-stone-800">
     
@@ -326,9 +369,10 @@
                     </div>
 
                     <!-- toggle bar or burger -->
-                    <svg class="toggle_bar w-7 md:hidden "  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <!-- <svg class="toggle_bar w-7 md:hidden "  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                    </svg>
+                    </svg> -->
+                    <div class="toggle_bar"></div>
                       
 
                 </header><!--ending of header-->
@@ -557,8 +601,6 @@
 
             </section>
 
-
-
              <!-- export and import section -->
             <section class="bg-stone-150 w-full h-full py-20 flex flex-col md:flex-row md:justify-center md:items-center  md:pr-38 " >
 
@@ -672,7 +714,7 @@
                     <!-- card img 1 -->
                     <div class="box_card card__img--1 " >
 
-                        <img src="imgs/port-de-barcelona-night.jpg" alt=" ship port img" class="w-full h-full block object-cover " data-aos="flip-left" data-aos-easing="linear" data-aos-duration="2000">
+                        <img src="imgs/port-de-barcelona.jpg" alt=" ship port img" class="w-full h-full block object-cover " data-aos="flip-left" data-aos-easing="linear" data-aos-duration="2000">
 
                         <div class="card_overlay bg-gradient-to-t from-[#ee8f00] to-white opacity-80 " >
 
@@ -714,7 +756,7 @@
                     <!-- card img 3 -->
                     <div class="box_card card__img--1  ">
 
-                        <img src="imgs/container-operation-port-series.jpg" alt=" close-up-delivery-person-with-parcels" class="w-full h-full block object-cover transform" data-aos="flip-left" data-aos-delay="200" data-aos-easing="linear" data-aos-duration="2000">
+                        <img src="imgs/ship_port.jpg" alt=" close-up-delivery-person-with-parcels" class="w-full h-full block object-cover transform" data-aos="flip-left" data-aos-delay="200" data-aos-easing="linear" data-aos-duration="2000">
 
                         <div class="card_overlay bg-gradient-to-t from-[#ee8f00] to-white opacity-80 " >
 
@@ -739,7 +781,7 @@
             <!-- Testimonial section -->
             <section class="bg-stone-150 py-20 px-2 md:px-8 w-full h-full">
 
-                <div class="flex flex-col md:flex-row gap-4">
+                <div class="flex flex-col md:flex-row gap-4 overflow-hidden">
 
                     <div class="flex flex-col gap-5 w-full">
                         <h4 class="font-extrabold text-[#ee8f00] text-sm tracking-[5px] uppercase " data-aos="fade-up-right" data-aos-easing="linear" data-aos-duration="2000">
