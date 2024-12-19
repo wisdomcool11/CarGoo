@@ -189,7 +189,9 @@
 
                 /* hero container  styling image bg*/
                 .hero_img{
-                    background-image: url(imgs/bg_img.jpg);
+                    background-image: linear-gradient(
+                        rgba(0,0,0, 0.6)50%, rgb(0,0, 0 , 0.6)50%
+                    ) ,url('imgs/bg-bg.webp')  ;
                     background-repeat: no-repeat;
                     background-size: cover;
                     background-position: center;
@@ -197,7 +199,7 @@
                     height: 100%;
                 }
 
-                @media (max-width: 768px) {
+                /* @media (max-width: 768px) {
                     .hero__container{
                         background-image: linear-gradient(
                         rgba(0,0,0, 0.5)50%, rgb(0,0, 0 , 0.5)50%
@@ -208,7 +210,7 @@
                         background-attachment: fixed;
                     }
                 }
-                
+                 */
                 .box_card{
                     position: relative;
                 }
