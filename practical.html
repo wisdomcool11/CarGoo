@@ -1,0 +1,557 @@
+<!Doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarGoo</title>
+
+    <!-- scroll Reveal -->
+    <!-- <script src="https://unpkg.com/scrollreveal"></script> -->
+
+    <!-- AOS animation on scroll  -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+    
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/9753f25b53.js" crossorigin="anonymous"></script>
+    
+    <!-- Tailwind Style -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+              }
+            }
+          }
+        }
+      </script>
+
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+        @layer base{
+
+                /* PT+Sans google font */
+                 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+                /* google font jost */
+                @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+                /*###### custom styling #####*/
+
+                /* list styling */
+                .list_style{
+                    @apply hover:border hover:border-[#ee8f00] hover:text-[#ee8f00] p-1 rounded rounded-md hover:shadow-lg  text-sm md:text-base transform hover:scale-[1.03] active:translate-y-[4px]  transition ease-out duration-150 
+                }
+
+                /*special fade in styling  */
+                @media (max-width: 768px ) {
+                    nav{
+                    position: absolute;
+                    top: 6rem;
+                    left: 0px;
+                    width: 100%;
+                    background-color: #222;
+
+                    max-height: 0px;
+                    visibility: hidden;
+                    transition: max-height 380ms ease,
+                        visibility 350ms ease
+                    ;
+                    }
+
+                    header.active nav{
+                        z-index: 10;
+                        max-height: 21.875rem;/*350px */
+                        visibility: visible;
+                        animation: fadeIn 0.7s ease-in-out;
+                        /* the animation above will create a fade in effect */
+                    }
+
+                    @keyframes fadeIn{
+                        from{
+                            opacity: 0;
+                            transform: translateY(-12px);
+                        }
+                        to{
+                            opacity: 1;
+                            transform: translateY(0px);
+                        }
+                    }
+
+                    .toggle_bar{
+                        position: relative;
+                        width: 30px;
+                        height: 35px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+
+                    .toggle_bar::before{
+                        content: '';
+                        position: absolute;
+                        width: 100%;
+                        height: 3px;
+                        background-color: aliceblue;
+                        transform: translateY(-12px);
+                        box-shadow: 0 12px aliceblue;
+                        transition: transform 300ms ease-in-out, 
+                        box-shadow 300ms ease-in-out;
+                    }
+
+                    .toggle_bar::after{
+                        content: '';
+                        position: absolute;
+                        width: 100%;
+                        height: 3px;
+                        background-color: aliceblue;
+                        transform: translateY(12px);
+                        transition: transform 300ms ease-in-out;
+                    }
+
+                    header.active .toggle_bar::before{
+                        box-shadow: 0 0 aliceblue;
+                        transform: rotate(45deg);
+                        transition: transform 300ms ease-in-out;
+                    } 
+                    header.active .toggle_bar::after{
+                        transform: rotate(315deg);
+                        transition: transform 300ms ease-in-out;
+                    }
+
+                }
+ 
+                /* .hero_img{
+                    background-image: url(imgs/bg_img.jpg);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;
+                    width: 100%;
+                    height: 100%;
+                } */
+                
+                /* CTA*/
+                .fa-arrow-right {
+                    transform: rotateZ(-45deg);
+                    perspective: 800px;
+                }
+                .CTA:active .fa-solid {
+                    animation: roll_back .2s ease-in ;
+                }
+
+                @keyframes roll_back {
+                   from{
+                        transform: rotateZ(-45deg);
+                   }
+                   to{
+                        transform: rotateZ(15deg)
+                   } 
+                }
+
+                hr{
+                    width: 200px;
+                    background-color: #292524;
+                }
+
+                .team__img{
+                    @apply w-16 rounded rounded-full h-16 object-cover
+                }
+                .fa-star {
+                    @apply text-stone-800 text-lg shadow-md
+                }
+
+                .move__right:active{
+                    animation: animate__right 0.2s ease-in;
+                }
+
+                @keyframes animate__right {
+                    from{
+                        opacity: 1;
+                        transform: translateX(0px);
+                    }
+                    to{
+                        opacity: 0.4;
+                        transform: translateX(100px);
+                    }
+                }
+
+                .juggle__btn {
+                    @apply border-4 border-stone-600  font-semibold text-stone-800 rounded rounded-s-full rounded-e-full text-sm md:w-28 h-[50px] shadow-lg bg-white hover:rotate-0 transform active:translate-y-[4px] transition ease-in-out duration-150 ;
+                }
+
+                .btn__up{
+                    @apply transform rotate-12 ;
+                }
+
+                .hero_wrapper{
+                    width: 100%;
+                    /* height: 100vh; */
+                    /* padding: 2rem 3rem; */
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    background-image: linear-gradient(
+                        rgba(0,0,0, 0.6)50%, rgb(0,0, 0 , 0.6)50%
+                    ) ,url('imgs/bg-bg.webp')  ;
+                    background-repeat:  no-repeat;
+                    background-size: cover;
+                    background-position: center;
+                    background-attachment: fixed;
+                }
+
+
+            }
+        }
+    </style>
+
+</head>
+<body class="bg-stone-800">
+    
+    <div class="relative bg-stone-800 h-screen w-full">
+        <div class=" bg-[#ee8f00] w-80 h-96 rounded-e-full"> </div>
+        
+        <!-- main container -->
+        
+        <div class="container w-full absolute top-[10%] md:left-[3%] tranform translate-[-50%, -50%] bg-slate-50 rounded rounded-2xl p-3 md:p-8 ">
+
+            <div >
+
+                <header class="relative bg-stone-800 w-full rounded rounded-xl p-2 text-white font-normal flex justify-between" data-aos="fade-down" data-aos-easing ="linear" data-aos-duration="1500" >
+
+                    <!-- holds the page title and the nav container together -->
+                    <div class="flex flex-col md:flex-row items-start justify-center md:items-center md:gap-14   px-2  md:w-[600px]">
+
+                        <!-- webpage name -->
+                        <div class="flex justify-center gap-1 items-center md:px-2 h-full w-max">
+                            
+                            <i class="fa-solid fa-location-dot text-[#ee8f00] text-lg sm:text-4xl md:5xl "> </i>
+
+                            <a href="index.html">
+                                <h1 class="font-['PT Sans', sans-serif] font-bold text-md sm:text-xl md:text-xl ">
+                                    CarGoo
+                                </h1>
+                            </a>
+
+                        </div>
+    
+                        <!-- nav --> 
+                        <nav class="nav_menu md:block absolute top-[100%] left-0 z-10 md:relative md:top-0  bg-stone-800 w-full text-slate-300 font-['PT Sans', sans-serif] font-normal py-2 px-2  mt-2 rounded rounded-b-lg ">
+
+                            <ul class="flex flex-row md:justify-around justify-center w-full justify-between md:items-center  ">
+
+                                <li class="list_style "><a href="#" class="text-white hover:text-[#ee8f00] md:px-4  "> Home </a>
+                                </li>
+
+                                <li class="list_style"><a href="about_us.html" >About</a>
+                                </li>
+
+                                <li class="list_style"><a href="service.html" class=" md:px-4 " >Services</a></li>
+
+                                <li class="list_style"><a href="blog.html" class=" md:px-4 ">Blog</a></li>
+
+                                <li class="list_style"><a href="contact_us.html"  class=" md:px-4 ">Contact</a></li>
+
+                            </ul>
+                        </nav>
+                        
+                    </div>
+
+                    <!--nav button -->
+                    <div class=" flex flex-row justify-between items-center md:px-4 w-42 text-xs md:text-base md:w-80 gap-1 ">
+
+                        <a href="#" class=" py-2 px-3 md:px-6  hover:bg-[#ee8f00] hover:text-stone-800 hover:font-semibold  hover:rounded-full transform hover:scale-[1.03] active:translate-y-[4px] transition ease-in-out duration-150 " > 
+                            Sign In
+                            <i class="fa-solid fa-right-to-bracket"></i>
+                        </a>
+
+                        <a href="contact_us.html" class=" py-2 px-3 md:px-6 bg-[#ee8f00] hover:bg-transparent hover:text-white text-stone-800 font-semibold active:text-[#ee8f00] md:mx-2 rounded-full transform hover:scale-[1.03] active:translate-y-[4px] transition ease-in-out duration-150  ">
+                            Contact Us
+
+                            <i class="fa-solid fa-phone"></i> <!--phone icon -->
+                        </a>
+
+                    </div>
+
+                    <!-- toggle bar or burger -->
+                    <!-- <svg class="toggle_bar w-7 md:hidden "  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg> -->
+
+                    <div class="toggle_bar"></div>
+                      
+
+                </header><!--ending of header-->
+
+            </div>
+
+            <!-- Hero section -->
+            <section class ="hero_wrapper w-full my-14 flex flex-col md:flex-row gap-7 md:gap-1 justify-center items-center border rounded-b-xl py-24 md:py-0">
+
+                <!--hero context  -->
+                <div class="border-2 w-full text-white pl-6 md:pl-6 space-y-36 overflow-hidden">
+
+                    <div class="w-full flex flex-col gap-8">
+
+                        <h4 class="font-extrabold text-[#ee8f00] text-sm tracking-[6px] uppercase " data-aos="fade-right" data-aos-delay="200" data-aos-duration="1500" >
+                            CarGoo Express Cargo
+                        </h4>
+    
+                        <h1 class="text-4xl md:text-6xl text-white font-extrabold  " data-aos="fade-right" data-aos-delay="500" data-aos-duration="1000">
+                            Delivery Service
+                            <span class=" text-[#ee8f00]">Trusted</span> Logistics
+                        </h1>
+
+                        <p class="w-full px-2 md:w-96 text-stone-200 font-semibold " data-aos="fade-right" data-aos-delay="500" data-aos-duration="1500">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere excepturi optio numquam praesentium temporibus delectus
+                        </p>
+
+                         <!-- Hero button wrapper -->
+                         <div class=" flex flex-row justify-around items-center w-full md:w-80 text-xs md:text-base md:w-80 gap-3">
+    
+                            <a href="about_us.html"  data-aos="fade-up" data-aos-duration="1000">
+
+                                <button class=" py-3 px-3 md:py-4 md:px-4 w-28 md:w-40 bg-[#ee8f00] hover:border-2 hover:border-[#ee8f00] hover:bg-transparent hover:font-semibold rounded-lg transform hover:scale-[0.8] active:translate-y-[4px] transition ease-in-out duration-150  "> 
+                                    About Us
+                                </button>
+                            </a>
+    
+                            <a href="service.html"  data-aos="fade-up"   data-aos-delay="300" data-aos-duration="1000">
+
+                                <button class=" w-28 md:w-40  py-3 md:py-4 px-3 md:px-4 hover:bg-[#ee8f00] bg-transparent border-2 border-[#ee8f00] hover:text-white font-semibold active:text-[#ee8f00] md:mx-2 rounded-lg transform hover:scale-[0.8] active:translate-y-[4px] transition ease-in-out duration-150  ">
+                                    Our Service
+                                </button>
+                            </a>
+    
+                        </div>
+                    </div>
+
+                    <div class="w-full grid grid-cols-2 gap-4 md:flex md:justify-around md:items-center border-2">
+
+                        <!-- <a href="ocen_freight.html" data-aos="fade-up-left" data-aos-duration="1500">
+                            <span class=" flex flex-col justify-center items-center  gap-2 hover:border-2 hover:border-[#ee8f00] py-3 md:p-3 hover:rounded-lg tranform hover:scale-[0.8] active:translate-y-[4px] transition ease-in duration-150 " >
+                                <i class="fa-solid fa-water text-2xl md:text-4xl text-[#ee8f00] hover:text-white  "></i>
+
+                                <h4 class=" text-sm md:text-xl font-bold ">
+                                    Sea Freight
+                                </h4>
+                            </span>
+                        </a>
+                       
+                        <a href="domestic_logistic_service.html" data-aos="fade-up-left"   data-aos-delay="200" data-aos-duration="1500">
+
+                            <span class=" flex flex-col justify-center items-center  gap-2 hover:border-2 hover:border-[#ee8f00] py-3 md:p-3 hover:rounded-lg tranform hover:scale-[0.8] active:translate-y-[4px] transition ease-in duration-150 " >
+
+                                <i class="fa-solid fa-house text-2xl md:text-4xl text-[#ee8f00] hover:text-white  "></i>
+
+                                <h4 class=" text-sm md:text-xl font-bold ">
+                                    Warehousing 
+                                </h4>
+                            </span>
+                        </a>
+
+                        <a href="air_freight.html" data-aos="fade-up-left"   data-aos-delay="400" data-aos-duration="1500">
+                            <span class=" flex flex-col justify-center items-center  gap-2 hover:border-2 hover:border-[#ee8f00] py-3 md:p-3 hover:rounded-lg tranform hover:scale-[0.8] active:translate-y-[4px] transition ease-in duration-150 " >
+
+                                <i class="fa-solid fa-plane-arrival text-2xl md:text-4xl text-[#ee8f00] hover:text-white  "></i>
+
+                                <h4 class=" text-sm md:text-xl font-bold ">
+                                    Air Freight
+                                </h4>
+                            </span>
+                        </a>
+
+                        <a href="truck_freight.html" data-aos="fade-up-left"   data-aos-delay="600" data-aos-duration="1500">
+
+                            <span class=" flex flex-col justify-center items-center  gap-2 hover:border-2 hover:border-[#ee8f00] py-3 md:p-3 hover:rounded-lg tranform hover:scale-[0.8] active:translate-y-[4px] transition ease-in duration-150 " >
+
+                                <i class="fa-solid fa-truck-ramp-box text-2xl md:text-4xl text-[#ee8f00] hover:text-white"></i>
+
+                                <h4 class=" text-sm md:text-xl font-bold ">
+                                    Trucking
+                                </h4>
+                            </span>
+                        </a> -->
+                    </div>
+                </div>
+
+                <!-- img container -->
+                <div class="border-2 w-full h-full relative hidden md:block ">
+                    <img src="imgs/F2.png" loading="lazy" alt="ship Delivery personnel" class="object-contain object-left ">
+                </div>
+               
+            </section>
+
+            
+
+            <footer class="bg-stone-800 pt-20 px-2 md:px-8 w-full h-full md:h-full" data-aos="fade-up" data-aos-duration="2000">
+                <!-- top footer -->
+
+                <div class="flex flex-col justify-center items-center text-center md:text-left md:grid md:grid-cols-4 gap-12 pb-10 ">
+
+                    <!-- first section -->
+                    <div class=" w-full h-full text-stone-200 flex flex-col items-center  justify-center  pace-y-5 ">
+
+                        <div class="flex justify-start items-center gap-3 items-center md:px-2 h-full text-center ">
+                            
+                            <i class="fa-solid fa-location-dot text-[#ee8f00] text-5xl md:text-4xl "> </i>
+
+                            <div class="flex flex-col ">
+                                <h1 class="font-['PT Sans', sans-serif] font-bold text-md text-4xl  ">
+                                    CarGoo
+                                </h1>
+    
+                                <p class="text-xs md:text-md ml-10 font-bold">
+                                    Logistics & <span class="text-[#ee8f00]">Cargo</span>
+                                </p>
+                            </div>
+    
+                        </div>
+
+                        <p class="leading-7 md:leading-8 text-sm md:text-base ">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus qui ad aliquam rerum! Architecto amet id aperiam, totam nemo debitis.
+                        </p>
+
+                        <!-- footer social medies -->
+                        <div class="w-full flex justify-center md:justify-start items-center gap-3 ">
+                            <a href="#"><i class="fa-brands fa-facebook social-media-footer"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter social-media-footer"></i></a>
+                            <a href="#"><i class="fa-brands fa-youtube social-media-footer"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram social-media-footer"></i></a>
+                        </div>
+                        
+                    </div>
+
+                    <!-- second footer section -->
+                    <div class=" w-full h-full space-y-7">
+
+                        <h3 class=" font-['PT Sans', sans-serif] font-bold text-md text-2xl text-white ">
+                            Our Services
+                        </h3>
+        
+                        <ul class=" text-stone-200 text-sm md:text-base space-y-3 list-image-[url(../imgs/icons/check-mark.png)] list-inside font-semibold">
+                            <li><a href="export_&_import_service.html">
+                                Export & import
+                            </a></li>
+                            <li><a href="domestic_logistic_service.html">
+                                Domestic Logistic
+                            </a></li>
+                            <li><a href="customer_clearanc_service.html">
+                                Customer Clearance
+                            </a></li>
+                            <li><a href="truck_freight.html">
+                                Trucking Feight
+                            </a></li>
+                            <li><a href="air_freight.html">
+                                Air Freight
+                            </a></li>
+                            <li><a href="ocen_freight.html">
+                                Ocean Feight 
+                            </a></li>
+                        </ul>
+                    </div>
+
+
+                    <!-- Third footer section -->
+                    <div class=" w-full h-full space-y-7">
+
+                        <h3 class=" font-['PT Sans', sans-serif] font-bold text-md text-2xl text-white ">
+                            Our Support
+                        </h3>
+        
+                        <ul class=" text-stone-200 text-sm md:text-base space-y-3 list-image-[url(../imgs/icons/check-mark.png)] list-inside font-semibold">
+                            <li><a href="service.html">Services</a></li>
+                            <li><a href="single_blog.html">FAQs</a></li>
+                            <li><a href="contact_us.html">Contact</a></li>
+                            <li><a href="about_us.html">Terms & Conditions</a></li>
+                            <li><a href="about_us.html">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- forth footer section -->
+                    <div class="w-full h-full space-y-7">
+
+                        <h3 class=" font-['PT Sans', sans-serif] font-bold text-md text-2xl text-white ">
+                            Contact Info
+                        </h3>
+        
+                       <!-- contact info content -->
+                       <div class="pl-1 md:pl-3 space-y-6  mt-4">
+
+                            <div class="flex flex-col md:flex-row justify-center md:justify-start  gap-4 ">
+                                <!-- Address div -->
+                                <i class="fa-solid fa-house-user text-[#ee8f00] text-3xl md:text-2xl"></i>
+
+                                <!-- address text -->
+                                <div>
+                                    <h4 class="text-white text-sm md:text-xl font-bold ">Address </h4>
+                                    <p class="text-sm md:text-md text-[#ee8f00] ">99 Roving St., Big City, PKU 23456</p>
+                                </div>
+
+                            </div>
+                            
+                            <div class="flex flex-col md:flex-row justify-center md:justify-start gap-4 ">
+                                <!-- phone number div -->
+
+                                <i class="fa-solid fa-phone text-[#ee8f00] text-3xl md:text-2xl"></i>
+
+                                <!-- address text -->
+                                <div>
+                                    <h4 class="text-white text-sm md:text-xl font-bold ">Phone Number </h4>
+                                    <p class="text-sm md:text-md text-[#ee8f00] ">123-234-1234</p>
+                                </div>
+
+                            </div>
+                            
+                            <div class="flex flex-col md:flex-row justify-center md:justify-start gap-4 ">
+                                <!-- phone number div -->
+
+                                <i class="fa-regular fa-envelope text-[#ee8f00] text-3xl md:text-2xl"></i>
+
+                                <!-- address text -->
+                                <div>
+                                    <h4 class="text-white text-sm md:text-xl font-bold ">Email Address </h4>
+
+                                    <p class="text-sm md:text-md text-[#ee8f00]">
+                                        hello@awesomesite.com
+                                    </p>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- down footer -->
+                <div class="w-full h-full  border-t-2 border-slate-50 py-5 flex items-center ">
+                    <p class="w-full text-center text-gray-50 text-xs md:text-sm capitalized tracking-wide ">
+                        Copyright 2022 &copy; All Right Resevered Design by WizzyBaby
+                    </p>
+                </div>
+            </footer>
+
+        </div>
+
+
+    </div>
+
+    <!-- AOS cdn script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Script -->
+    <script src="app.js"></script>
+</body>
+
+</html>
+
