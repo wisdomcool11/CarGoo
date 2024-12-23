@@ -297,6 +297,301 @@
                     @apply text-xl bg-[#ee8f00] text-white rounded-[50%] p-[8px] transform hover:scale-[0.9] hover:text-white transition ease-in duration-150
                 }
 
+                /**
+                * wrote the Hero styling with vanila css
+                */
+                .hero_sec{
+                    margin-top: 3.2rem;
+                    width: 100%;
+                    height: auto;
+                    padding: 2rem;
+                    background-image: linear-gradient(
+                        to top, rgba(0,0,0,0.6)50%, rgba(0,0,0,0.6)50%
+                    ) ,url('imgs/hero-bg.webp');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+                    background-attachment: fixed;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-family: sans-serif;
+                }
+
+                .hero_content, .hero_img{
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                    /* border: 1px solid black; */
+                }
+
+                .hero_content{
+                    padding: 3.5rem 0 3.5rem 2rem;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: left;
+                    justify-content: center;
+                    gap: 5rem;
+                }
+
+
+                .hero_context{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: left;
+                    justify-content: center;
+                    gap: 2rem;
+                }
+                
+                .hero_context h4{
+                    font-size: 0.8rem;
+                    font-weight: 800;
+                    letter-spacing: 6px;
+                    text-transform: uppercase;
+                    color: #ee8f00;
+                }
+
+                .hero_context h1{
+                    font-size: 3.2rem;
+                    color: #fff;
+                    font-weight: 900;
+                    line-height: 65px;
+                }
+                .orange-span{
+                    color: #ee8f00;
+                }
+
+                .hero_context p {
+                    color: rgb(198, 200, 201);
+                    width: 70%;
+                    font-size: 1.1rem;
+                    font-weight: bold;
+                    line-height: 1.5;
+                    word-spacing: 1px;
+                    letter-spacing: 1px;
+                }
+
+                /* <!-- CTA btn --> */
+                .hero_cta{
+                    width: 80%;
+                    display: block;
+                    display: flex;
+                    justify-content: left;
+                    align-items: center;
+                    gap: 1.3rem;
+                    padding: 1rem 0px;
+                    /* border: 1px solid red; */
+                }
+
+                .cta_btn{
+                    display: block;
+                    width: 180px ;
+                    height: 55px;
+                    font-size: 0.8rem;
+                    font-weight: bold;
+                    border: none;
+                    border-radius: 8px;
+                    outline: none;
+                    cursor: pointer;
+                }
+
+                .about-cta{
+                    background-color: #ee8f00;
+                    color: aliceblue;
+                    transition: backgroud-color 350ms ease-in, color 350ms ease-in, border 400ms ease-in ,  transform 350ms;
+                }
+
+                .about-cta:hover{
+                    background-color: transparent;
+                    color: #ee8f00;
+                    border: 2px solid #ee8f00;
+                    transform: scale(0.9);
+                }
+                .about-cta:active{
+                    transform: translateY(4px);
+                }
+
+                .servic-cta{
+                    background-color: transparent;
+                    color: #ee8f00;
+                    border: 2px solid #ee8f00;
+                    transition: backgroud-color 350ms ease-in, color 350ms ease-in, border 400ms ease-in, transform 350ms ;
+                }
+                .servic-cta:hover{
+                    background-color: #ee8f00;
+                    color: aliceblue;
+                    transform: scale(0.9);
+                }
+                .servic-cta:active{
+                    transform: translateY(4px);
+                }
+
+                /* hero icon down wrapper */
+                .hero_icon{
+                    width: 100%;
+                    padding: 0.6rem 0px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    /* gap: 1.5rem; */
+                }
+
+                .hero_icon a{
+                    text-decoration: none;
+                }
+
+                
+                .hero_icon span {
+                    padding: 0.6rem;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 1rem;
+
+                    transition: transform 250ms ease-in, font-size 450ms ease-in, border 240ms ease-in-out;
+                }
+                
+                .hero_icon span:hover{
+                    
+                    border: 2px solid #ee8f00;
+                    border-radius: 8px;
+                    transform: scale(.9);
+                }
+                .hero_icon span:active{
+                    transform: translateY(4px);
+                }
+
+                .hero_icon span .fa-solid{
+                    color: #ee8f00;
+                    font-size: 2rem;
+                }
+
+                .hero_icon span h4{
+                    color: aliceblue;
+                    font-size: 1.1rem;
+                    transition: color 240ms ease-in;
+                }
+
+                .hero_icon span:hover h4{
+                    color: #ee8f00;
+                    /* transform: scale(.5); */
+                }
+
+                /* hero img */
+                .hero_img img{
+                    position: absolute;
+                    top:-315px ;
+                }
+
+                @media (max-width: 768px) {
+                    .hero_sec{
+                        width: 100%;
+                        height: auto;
+                    }
+
+                    .hero_content{
+                        padding: 0px;
+                        gap: 1.5rem;
+                    }
+
+                    .hero_context h4{
+                        font-size: .7rem;
+                    }
+
+                    .hero_context h1{
+                        width: 100%;
+                        font-size: 2rem;
+                        line-height: 50px;
+                    }
+
+                    .hero_content p{
+                        width: 100%;
+                        letter-spacing: 0px;
+                    }
+
+                    .hero_cta{
+                        width: 100%;
+                    }
+
+                    .cta_btn{
+                        width: 120px;
+                        font-size: 0.7;
+                    }
+
+                    .hero_icon span h4{
+                        font-size: 0.75rem;
+                    }
+
+                    /* .hero_icon{
+                        display: grid;
+                        grid-template-columns: repeat(2,1fr);
+                        grid-template-rows: repeat(2,1fr);
+                        justify-content: center;
+                        align-content: center;
+                    } */
+
+
+                    .hero_img img{
+                        top: -154px;
+                        width: 100%;
+                        height: 510px;
+                    }
+                }
+
+                @media (max-width: 640px) {
+                    .hero_sec{
+                        width: 100%;
+                        height: auto;
+                    }
+                    .hero_img{
+                        display: none;
+                    }
+
+                    .hero_content{
+                        padding: 0px;
+                    }
+
+                    .hero_context h4{
+                        font-size: .7rem;
+                    }
+
+                    .hero_context h1{
+                        width: 100%;
+                        font-size: 2rem;
+                        line-height: 50px;
+                    }
+
+                    .hero_content p{
+                        width: 100%;
+                        letter-spacing: 0px;
+                    }
+
+                    .hero_cta{
+                        width: 100%;
+                        justify-content: center;
+                    }
+
+                    .cta_btn{
+                        width: 120px;
+                        font-size: 0.7;
+                    }
+
+                    .hero_icon span h4{
+                        font-size: 1rem;
+                    }
+
+                    .hero_icon{
+                        display: grid;
+                        grid-template-columns: repeat(2,1fr);
+                        grid-template-rows: repeat(2,1fr);
+                        justify-content: center;
+                        align-content: center;
+                    }
+                }
+
+
             }
         }
     </style>
@@ -383,16 +678,17 @@
 
             <!-- Hero section -->
 
-            <section class=" w-full my-14 space-y-14  ">   
+            <!-- <section class=" w-full my-14 space-y-14  ">   
 
                 <div class=" w-full hero__container flex  flex-col md:flex-row gap-7 md:gap-1 justify-center items-center border rounded-b-xl py-24 md:py-0">
-                    <!-- hero section with a huge image and content on it -->
+
+                    hero section with a huge image and content on it
                      
                     <div class=" w-full text-white pl-6 md:pl-6 space-y-36 overflow-hidden"> 
 
                         <div class=" w-full flex flex-col gap-8 ">
 
-                            <!-- hero content -->
+                            hero content
                             <h4 class="font-extrabold text-[#ee8f00] text-sm tracking-[6px] uppercase " data-aos="fade-right" data-aos-delay="200" data-aos-duration="1500" >
                                 CarGoo Express Cargo
                             </h4>
@@ -406,7 +702,7 @@
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere excepturi optio numquam praesentium temporibus delectus
                             </p>
     
-                            <!-- Hero button wrapper -->
+                            Hero button wrapper
                             <div class=" flex flex-row justify-around items-center w-full md:w-80 text-xs md:text-base md:w-80 gap-3">
     
                                 <a href="about_us.html"  data-aos="fade-up" data-aos-duration="1000">
@@ -426,7 +722,7 @@
                             </div>
                         </div>
 
-                        <!--hero content  -->
+                        hero content 
                         <div class="w-full grid grid-cols-2 gap-4 md:flex md:justify-around md:items-center  " >
 
                             <a href="ocen_freight.html" data-aos="fade-up-left" data-aos-duration="1500">
@@ -476,16 +772,94 @@
 
                         </div>
     
-                    </div>
+                    </div> -->
 
-                    <!-- hero img -->
+                    <!-- hero img
                     <div class="w-full h-full relative hidden md:block " data-aos="fade-up-left"   data-aos-delay="100" data-aos-duration="2000">
 
                         <img src="imgs/F2.png" loading="lazy" alt="ship Delivery personnel" class="object-contain object-left ">
                     </div>
 
-                </div> <!-- end of hero section -->
+                </div>  -->
+                <!-- end of hero section -->
 
+            <!-- </section> -->
+
+            <!-- new here just with html && css  -->
+
+            <section class="hero_sec">
+
+                <div class="hero_content">
+                    
+                    <!-- Hero context up -->
+                    <div class="hero_context">
+                        <h4>CarGoo Express Cargo</h4>
+        
+                        <h1>
+                            Delivery Service
+                            <span class="orange-span">Trusted</span> Logistics
+                        </h1>
+        
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere excepturi optio numquam praesentium temporibus delectus
+                        </p>
+        
+                        <!-- Here CTA button -->
+                        <div class="hero_cta">
+        
+                            <button class="cta_btn about-cta">
+                                About Us
+                            </button>
+        
+                            <button class="cta_btn servic-cta">
+                                Our Service
+                            </button>
+        
+                        </div>
+                    </div>
+        
+                    <!-- hero icon down -->
+                    <div class="hero_icon">
+        
+                        <a href="ocen_freight.html">
+                            <span >
+                                <i class="fa-solid fa-water"></i>
+            
+                                <h4>Sea Freight</h4>
+                            </span>
+                        </a>
+        
+                        <a href="air_freight.html">
+                            <span >
+                                <i class="fa-solid fa-plane-arrival"></i>
+            
+                                <h4>Air Freight</h4>
+                            </span>
+                        </a>
+        
+                        <a href="truck_freight.html">
+                            <span >
+                                <i class="fa-solid fa-truck-ramp-box"></i>
+            
+                                <h4>Trucking</h4>
+                            </span>
+                        </a>
+        
+                        <a href="domestic_logistic.html">
+                            <span >
+                                <i class="fa-solid fa-house"></i>
+            
+                                <h4>Warehousing</h4>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+        
+                <!-- hero image -->
+                <div class="hero_img">
+                    <img src="imgs/F2.png" loading="lazy" alt="ship Delivery personnel">
+                </div>
+        
             </section>
 
             <!-- export and import section -->
