@@ -84,8 +84,8 @@
 
                     .toggle_bar{
                         position: relative;
-                        width: 30px;
-                        height: 35px;
+                        width: 26px;
+                        height: 20px;
                         display: flex;
                         justify-content: center;
                         align-items: center;
@@ -95,10 +95,10 @@
                         content: '';
                         position: absolute;
                         width: 100%;
-                        height: 3px;
+                        height: 2px;
                         background-color: aliceblue;
-                        transform: translateY(-12px);
-                        box-shadow: 0 12px aliceblue;
+                        transform: translateY(-10px);
+                        box-shadow: 0 10px aliceblue;
                         transition: transform 300ms ease-in-out, 
                         box-shadow 300ms ease-in-out;
                     }
@@ -107,11 +107,12 @@
                         content: '';
                         position: absolute;
                         width: 100%;
-                        height: 3px;
+                        height: 2px;
                         background-color: aliceblue;
-                        transform: translateY(12px);
+                        transform: translateY(10px);
                         transition: transform 300ms ease-in-out;
                     }
+
 
                     header.active .toggle_bar::before{
                         box-shadow: 0 0 aliceblue;
@@ -336,8 +337,9 @@
                 }
 
                 /* active js */
-                .faq.active .answer{
+                .faq.activated .answer{
                     max-height: 300px;
+                    visibility: visible;
                     animation: fade 1s ease-in-out;
                 }
 
@@ -438,7 +440,7 @@
               <!-- Hero section -->
               <section class=" w-full my-14 space-y-14  ">   
 
-                <div class=" w-full h-[25rem] hero__container flex  flex-col md:flex-row gap-7 md:gap-1 justify-center items-center border rounded-b-xl py-24 md:py-0">
+                <div class="hero__container w-full h-[13.125rem] md:h-[25rem] flex  flex-col md:flex-row gap-7 md:gap-1 justify-center items-center border rounded-b-xl py-24 md:py-0">
                     <!-- hero section with a huge image and content on it -->
                      
                     <div class=" w-full text-white pl-6 md:pl-6 space-y-36 "> 
@@ -587,7 +589,11 @@
                                 <h3 class="question-h3 ">
                                     Nam ut dui congue posuere lectus non?
                                 </h3>
-                                <span class="faq-sign js-faq-sign " >+</span>
+
+                                <span class="faq-sign js-faq-sign " >
+                                    +
+                                </span>
+
                             </div>
                             <!-- answer -->
                             <div class="answer">
@@ -655,7 +661,7 @@
 
                 <!-- image section -->
                 <div class="w-full h-full p-2">
-                    <img src="imgs/icons/P11-containers-warehouse.jpg" alt="shipping container pack yard" class="w-full h-full rounded-xl object-cover object-center ">
+                    <img src="imgs/icons/P11-containers-warehouse.png" alt="shipping container pack yard" class="w-full h-full rounded-xl object-cover object-center ">
                 </div>
 
             </section>

@@ -30,6 +30,7 @@ toggle_bar.addEventListener('click' , function(){
 AOS.init();
 
 
+
 // Accordion
 
 const faqs = document.querySelectorAll('.js-faq');
@@ -37,8 +38,7 @@ const faqSing = document.querySelector('.js-faq-sign');
 
 faqs.forEach(faq =>{
     faq.addEventListener('click', ()=>{
-        faq.classList.toggle('active');
-        
+        faq.classList.toggle("activated");
     })
 })
 
@@ -127,9 +127,9 @@ const validateInput = ()=>{
 }
 
 const emptyInput = ()=>{
-    username.innerText = '';
-    email.innerText = '';
-    subject.innerText = '';
-    textArea.innerText = ''
+    username.value = '';
+    email.value = '';
+    subject.value = '';
+    textArea.value = ''
 }
 
