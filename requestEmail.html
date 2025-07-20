@@ -620,7 +620,7 @@
 
 
                 .input-control{
-                    width: 100%;
+                    width: 400px;
                     padding: 3px;
                 }
 
@@ -637,12 +637,18 @@
                 }
 
                 #form-btn{
-                    width: 180px;
+                    width: max-content;
                     border-radius: 10px;
                     padding: 8px;
                     color: #292524;
                     background-color: #ee8f00;
                     font-weight: 500;
+                }
+
+                #form-btn:active, .resetPassword{
+                    transform: translateY(4px);
+                    box-shadow: 0px 2px 4px 2px #444;
+                    transition: transform 0.6ms ease-in;
                 }
 
                 .signing-Btn{
@@ -677,16 +683,12 @@
                 }
 
                 @media (max-width: 687px ) {
-                    .hold-control{
-                        width: 100%;
-                        display: flex;
-                        flex-direction: column;
-                    }
 
                     .forms{
                         width: 100%;
                         /* position: none; */
                     }
+                    
                 }
 
             }
@@ -748,10 +750,10 @@
                     <!--nav button -->
                     <div class=" flex flex-row justify-between items-center md:px-4 w-42 text-xs md:text-base md:w-80 gap-1 ">
 
-                        <!-- <a href="#" class=" py-2 px-3  hover:bg-[#ee8f00] hover:text-stone-800 hover:font-semibold  hover:rounded-full transform hover:scale-[1.03] active:translate-y-[4px] transition ease-in-out duration-150 " > 
+                        <a href="log.html" class=" py-2 px-3  hover:bg-[#ee8f00] hover:text-stone-800 hover:font-semibold  hover:rounded-full transform hover:scale-[1.03] active:translate-y-[4px] transition ease-in-out duration-150 " > 
                             Sign In
                             <i class="fa-solid fa-right-to-bracket"></i>
-                        </a> -->
+                        </a>
 
                         <a href="contact_us.html" class=" py-2 px-3  bg-[#ee8f00] hover:bg-transparent hover:text-white text-stone-800 font-semibold active:text-[#ee8f00] md:mx-2 rounded-full transform hover:scale-[1.03] active:translate-y-[4px] transition ease-in-out duration-150  ">
                             Contact Us
@@ -760,11 +762,6 @@
                         </a>
 
                     </div>
-
-                    <!-- toggle bar or burger -->
-                    <!-- <svg class="toggle_bar w-7 md:hidden "  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                    </svg> -->
 
                     <div class="toggle_bar"></div>
                       
@@ -786,14 +783,14 @@
                             <!-- hero content -->
 
                             <h1 class="text-4xl md:text-6xl text-white font-extrabold  " data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">
-                                JOIN
-                                <span class=" text-[#ee8f00]">US</span>
+                                Request
+                                <span class=" text-[#ee8f00]">Email</span>
                             </h1>
 
 
                             <div>
                                 <a href="index.html"><span class=" text-[#ee8f00] font-semibold text-base hover:underline " data-aos="fade-right" data-aos-delay="500" data-aos-duration="1000">Home</span></a> /
-                                <a href="#" class="text-base font-extrabold"data-aos="fade-right" data-aos-delay="500" data-aos-duration="1000">Join Us</a>
+                                <a href="#" class="text-base font-extrabold"data-aos="fade-right" data-aos-delay="500" data-aos-duration="1000">Request Password</a>
                             </div>
                         </div>
 
@@ -804,97 +801,32 @@
             </section>
 
                         <!-- signing section -->
-            <section class="signingSection bg-stone-150 py-20 px-1 md:px-8 w-full flex flex-col md:flex justify-center items-center gap-4 ">
+            <section class="signingSection bg-stone-150 py-15 px-1 md:px-8 w-full flex flex-col md:flex justify-center items-center gap-4 ">
 
                 <div class="w-full flex justify-around items-center gap-2 md:gap-10">
 
-                    <button class="signBtn w-[100px] p-6 font-bold  bg-[#ee8f00] text-[#292524] rounded-full">
-                        Sign Up
-                    </button>
-
-                    <button class="signBtn w-[100px] p-6 font-bold  bg-[#ee8f00] text-[#292524] rounded-full">
-                        Sign In
+                    <button class="signBtn w-auto h-auto p-6 font-bold  bg-[#ee8f00] text-[#292524] rounded-full">
+                        reset password
                     </button>
                 </div>
 
-                <div class="w-full h-auto md:h-[440px] flex flex-col md:flex-row  justify-center items-center py-5 gap-9 space-x-0 md:space-x-3">
+                <div class="w-full h-[350px] flex flex-col md:flex-row  justify-center items-center py-5 gap-9 space-x-0 md:space-x-3">
                    
-                    <div class="forms h-[450px] md:w-[75%] ">
-                        <!-- sign up -->
-                        <form action="/" id="form-signUp" class="signUp" >
+                    <div class="forms h-full md:h-[300px] md:w-[75%] ">
+                        <!-- Reset password form  -->
+                        <form action="/" id="form-signUp" class="signUp request--password__email flex flex-col justify-center items-center" >
                             
                             <!-- first name -->
-                            <div class="input-control">
-                                <input type="text" placeholder="First Name" id="firstName-signUp" name="username" >
+                            <div class="input-control flex flex-col justify-center items-center">
+                                <input type="text" placeholder="Your Email" id="request-email" name="email" required />
                                 <div class="error"></div>
                             </div>
 
-                            <!-- last name -->
-                            <div class="input-control">
-                                <input type="text" placeholder="Last Name" id="lastName-signUp" name="username">
-                                <div class="error"></div>
-                            </div>
-        
-                            <!-- email -->
-                            <div class="input-control">
-                                <input type="text" placeholder="Your Email" id="email-signUp" name="email" >
-                                <div class="error"></div>
-                            </div>
+                            <button type="submit" id="form-btn" class="request-Btn">
+                               Send Password Reset Link
+                            </button>
 
-                            <!-- phone  -->
-                            <div class="input-control">
-                                <input type="text" placeholder="Phone" id="phone-signUp" name="subject">
-                                <div class="error"></div>
-                            </div>
-                            <!-- password -->
-                            <div class="input-control">
-                                <input type="text" placeholder="Password" id="password-signUp" name="subject">
-                                <div class="error"></div>
-                            </div>
-
-                            <!--re-password -->
-                            <div class="input-control">
-                                <input type="text" placeholder="Confirm Password" id="confirmPassword-signUp" name="subject" >
-                                <div class="error"></div>
-                            </div>
-        
-                            
-        
-                            <button type="submit" id="form-btn">Submit</button>
                         </form>
-                    </div>
-                    
-                    <div class="forms h-[300px] md:w-[75%]">
-                        <!-- sign in -->
-                        <form action="/" id="form-signIn" class="signIn">
-        
-                            <div class="input-control">
-                                <input type="text" placeholder="Your Email" id="email-signIn" name="email">
-                                <div class="error"></div>
-                            </div>
-                            
-                            <!-- password -->
-                            <div class="input-control">
-                                <input type="text" placeholder="Password" id="password-signIn" name="password">
-                                <div class="error"></div>
-                            </div>
-
-                            <!-- re-password -->
-                            <div class="input-control">
-                                <input type="text" placeholder="Confirm Password" id="confirmPassword-signIn"  name="confirmPassword-signInss" >
-                                <div class="error"></div>
-                            </div>
-        
-                            <div class="flex justify-center items-center gap-3">
-                                <button type="submit" id="form-btn">Submit</button>
-
-                                <a href="requestEmail.html" class="resetPassword 
-                                w-max rounded-2xl p-3 text-[#292524] bg-[#ee8f00] font-semibold">
-                                    Reset Password
-                                </a>
-                            </div>
-                        </form>
-
                     </div>
 
                 </div>

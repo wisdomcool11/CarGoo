@@ -1,6 +1,7 @@
 
 
-console.log('hello')
+//local storage to get any existing users
+const signUpSavedInfo = JSON.parse(localStorage.getItem('users')) || [];
 
 const header = document.querySelector('header');
 const toggle_bar = document.querySelector('.toggle_bar');
@@ -26,21 +27,51 @@ faqs.forEach(faq =>{
 })
 
 
-// contact form validation
-
-const formForm = document.querySelector('#js-form');
 
 
 document.addEventListener('DOMContentLoaded', () =>{
-    // Render contact form and sign form
-    setTimeout(() => {
-        
-        renderContactForm();
-    },500);
 
-    // renderSignForm();
-    renderSignForm();
+    const page = window.location.pathname;
+
+
+    // checking the file path if it true then render the code.
+    if(page.includes('contact_us.html')){
+
+        // first check if user has an account with us
+        const user = JSON.parse(localStorage.getItem('loggedInUser'))
+    
+        // check
+        if (user){
+            // Render contact form and sign form
+            setTimeout(() => {
+                
+                renderContactForm();
+            },500);
+    
+        }
+    }
+
+    if(page.includes('log.html')){
+        // renderSignForm();
+        renderSignForm();
+
+    }
+
+    if(page.includes('requestPassword.html')){
+
+       requestPasswordEmail ();
+    }
+
+    if(page.includes('resetPassword.html')){
+        resettingPassword ();
+    }
+
+
 })
+
+// contact form validation
+const formForm = document.querySelector('#js-form');
+
 
 function renderContactForm (){
     
@@ -64,6 +95,7 @@ const validateInput = ()=>{
     const email = document.querySelector('#email')
     const subject = document.querySelector('#subject');
     const textArea = document.querySelector('#textArea');
+
 
     // input Values
     const userValue = username.value.trim();
@@ -157,15 +189,39 @@ signButton.forEach(button =>{
     
 })
 
+//checking if all input value are entered 
+const validInput = {
+    isFirstNameValid : false ,
+    isLastNameValid : false, 
+    isEmailValid : false,
+    isPhoneValid : false,
+    isPasswordValid: false,
+    isConfirmPasswordValid : false
+}
 
 // Sign up and sign in storage
 const checkLog = {
-   email : '',
-   password: '',
-   confirmPassword : ''
+    id : 0,
+    firstName: '',
+    lastName: '',
+    email : '',
+    password: '',
+    confirmPassword : ''
 }
 
+// const signUpSavedInfo = [
+//     {
+//         id: 0,
+//         email: 'wisdom@gmail.com',
+//         password : 'Banking00',
+//         confirmPassword: 'Banking00'
+//     }
+// ]
+
+
 // Render sign up and sign in form
+let increaseId = 0;
+
 function renderSignForm (){
     
 
@@ -175,22 +231,55 @@ function renderSignForm (){
     // sign In form validation
     const formSignIn = document.querySelector('#form-signIn');
 
-    
-    formSignUP.addEventListener('submit', e =>{
-        e.preventDefault();
-    
-        validateSignUp ()
-        
-    }) 
+    // requst password
+    const requestPasswordForm = document.querySelector('.request--password__email');
 
-    formSignIn.addEventListener('submit', e =>{
-        e.preventDefault();
+    //resetting password
+    const resetPasswordForm = document.querySelector(' .resetPassword ');
+
+
+    // check if the form exist  
+    if(formSignUP){
+        formSignUP.addEventListener('submit', e =>{
+            e.preventDefault();
+        
+            validateSignUp ()
+            
+        }) 
+
+    }
+
+    if(formSignIn){
+
+        formSignIn.addEventListener('submit', e =>{
+            e.preventDefault();
+        
+            validateSignIn ();
+        })
+    }
+
+    if(requestPasswordForm){
+         requestPasswordForm.addEventListener('submit', (e)=>{
+            e.preventDefault()
+
+            requestPasswordEmail () ; 
+        })
+    }
+
+    if( resetPasswordForm ){
+        resetPasswordForm.addEventListener('submit', (e)=>{
+            e.preventDefault()
+        
+            resettingPassword ();
+        })
+    }
     
-        validateSignIn ();
-    })
     
 }
 
+
+
+// function savedDataInformation (){}
 
 //sign Up validation
 function validateSignUp () {
@@ -216,6 +305,9 @@ function validateSignUp () {
         setError(firstSignUp, 'field is required*');
     }else{
         setSuccess(firstSignUp);
+        checkLog.firstName = firstValueSignUp;
+        validInput.isFirstNameValid = true;
+
     }
 
     // last name
@@ -223,14 +315,17 @@ function validateSignUp () {
         setError(lastSignUp, 'field is required*');
     }else{
         setSuccess(lastSignUp);
+        checkLog.lastName = lastValueSignUp;
+        validInput.isLastNameValid = true;
     }
 
     //phone
     if(phoneValueSignUp === ''){
         setError(phoneSignUp, 'field is required&')
-    }else[
-        setSuccess(phoneSignUp)
-    ]
+    }else{
+         setSuccess(phoneSignUp);
+         validInput.isPhoneValid = true;
+    }
 
     // email
     if(emailValueSignUp === ''){
@@ -243,6 +338,7 @@ function validateSignUp () {
         setSuccess(emailSignUp)
         
         checkLog.email = emailValueSignUp;
+        validInput.isEmailValid = true;
     }
 
     // password
@@ -255,6 +351,7 @@ function validateSignUp () {
     } else{
         setSuccess(passwordSignUp)
         checkLog.password = passwordValueSignUp;
+        validInput.isPasswordValid = true;
     }
 
     // confirm password
@@ -267,10 +364,38 @@ function validateSignUp () {
     }else{
         setSuccess(confirmPasswordSignUp);
         checkLog.confirmPassword = confirmPasswordValueSignUp;
+        validInput.isConfirmPasswordValid = true;
     }
 
-    emptyInput(firstSignUp,lastSignUp,emailSignUp,phoneSignUp,passwordSignUp,confirmPasswordSignUp);
+
+
+    const allValid = Object.values(validInput).every(value => value === true);
+
+    if(allValid){
+
+        const newUser ={
+            id: increaseId++,
+            firstName: checkLog.firstName,
+            lastName: checkLog.lastName,
+            email: checkLog.email,
+            password: checkLog.password,
+            confirmPassword: checkLog.confirmPassword
+        }
+        
+        // save into the new array and on local storage
+        signUpSavedInfo.push(newUser)
+        localStorage.setItem('users', JSON.stringify(signUpSavedInfo))
+
+        setTimeout(()=>{
+            emptyInput(firstSignUp,lastSignUp,emailSignUp,phoneSignUp,passwordSignUp,confirmPasswordSignUp);
+
+        },500)
+
+        console.log(signUpSavedInfo);
+
+    }
     
+
 }
 
 // sign In validation
@@ -285,15 +410,21 @@ function validateSignIn (){
     const confirmPasswordSignInValue = confirmPasswordSignIn.value.trim();
     
     // condition
-    if(emailSignIn === checkLog.email && passwordSignIn === checkLog.password && confirmPasswordSignIn === checkLog.confirmPassword){
-        console.log('logged In');
+    const userFound = signUpSavedInfo.find(user => 
+        user.email === emailSignInValue && user.password === passwordSignInValue && user.confirmPassword === confirmPasswordSignInValue
+    );
+
+    if(userFound){
+        console.log('Logged In: ID =', userFound.id);
         
-    }else{
-        console.log("Incorrect info");
-        
+        // when user is found saved
+        localStorage.setItem("loggedInUser", JSON.stringify(userFound))
+
+    } else {
+        console.log("Incorrect Info");
     }
 
-    emptyInput(emailSignIn,passwordSignIn, confirmPasswordSignInValue)
+    emptyInput(emailSignIn, passwordSignIn, confirmPasswordSignIn);
 }
 
 
@@ -308,6 +439,87 @@ function emptyInput(firstName,lastName,email,phone,password,confirmPassword){
 }
 
 
-console.log('who is awake');
+// Request password email
+// take in the user email
+// check if the email is in the signUpSavedInfo 
+// when clicked to confirm , send to the reset password page
+
+
+function requestPasswordEmail () {
+    
+    const requestPasswordEmailInput = document.querySelector('#request-email');
+    const requestPasswordEmailInputValue = requestPasswordEmailInput.value.trim();
+
+    const userEmailFound = signUpSavedInfo.find ( user =>
+        user.email === requestPasswordEmailInputValue
+    );    
+
+    if(userEmailFound){
+
+        localStorage.setItem('passwordResetEmail', requestPasswordEmailInputValue);
+
+
+        // using the setError fun so i can user the other param of message to display a message
+        setError( requestPasswordEmailInput , 'Email found! Redirecting...')
+
+        setTimeout(() =>{
+            window.location.href = "resetPassword.html";
+        },1000)
+        
+    }else {
+        setError( requestPasswordEmailInput , 'Are you sure you are one of us ?')
+        
+    }
+    
+}
+
+
+// Reset password code
+// take input value of new password
+// confirm the password again
+// then save/ update the user password
+
+
+
+function resettingPassword (){
+    const password = document.querySelector('.js-reset-password-input') ;
+    const confirmPassword = document.querySelector('.js-reset-confirm-password-input');
+    const resetEmail = localStorage.getItem('passwordResetEmail');
+    let users = JSON.parse(localStorage.getItem('users')) || [];
+
+    if(!password || !confirmPassword){
+        setError(requestPasswordForm.children, 'field is required')
+    }
+
+    const newPasswordValue = password.value.trim();
+    const confirmPasswordValue = confirmPassword.value.trim()
+
+    if(newPasswordValue.length < 8){
+        setError(password, 'Paswword must be atleast 8 characters')
+        
+        return
+    }
+    if (newPasswordValue !== confirmPasswordValue) {
+        setError(confirmPassword, "password must be a match")
+        return;
+    }
+
+    // update the already stored data of user
+    users = users.map(user =>{
+        if(user.email === resetEmail){
+            user.password = newPasswordValue;
+            user.confirmPassword = confirmPasswordValue;
+        }
+
+        return user;
+    })
+
+    //update new user password and remove old userpassword
+    localStorage.setItem('users', JSON.stringify(users));
+    localStorage.removeItem('passwordResetEmail');
+
+    alert("Password reset successfully! You can now log in.");
+}
+
 
 
