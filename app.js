@@ -27,12 +27,17 @@ faqs.forEach(faq =>{
 })
 
 
-
-
 document.addEventListener('DOMContentLoaded', () =>{
 
     const page = window.location.pathname;
 
+
+    if (page.includes('log.html') || 
+        page.includes('requestPassword.html') || 
+        page.includes('resetPassword.html')) {
+            
+        renderSignForm();
+    }
 
     // checking the file path if it true then render the code.
     if(page.includes('contact_us.html')){
@@ -51,21 +56,21 @@ document.addEventListener('DOMContentLoaded', () =>{
         }
     }
 
-    if(page.includes('log.html')){
-        // renderSignForm();
-        renderSignForm();
+    // if(page.includes('log.html')){
+    //     // renderSignForm();
+    //     renderSignForm();
 
-    }
+    // }
 
-    if(page.includes('requestPassword.html')){
+    // if(page.includes('requestPassword.html')){
+    //     requestPasswordEmail ();
+    // }
 
-       requestPasswordEmail ();
-    }
+    // if(page.includes('resetPassword.html')){
+    //     resettingPassword ();
+    // }
 
-    if(page.includes('resetPassword.html')){
-        resettingPassword ();
-    }
-
+    renderSignForm();
 
 })
 
@@ -209,15 +214,6 @@ const checkLog = {
     confirmPassword : ''
 }
 
-// const signUpSavedInfo = [
-//     {
-//         id: 0,
-//         email: 'wisdom@gmail.com',
-//         password : 'Banking00',
-//         confirmPassword: 'Banking00'
-//     }
-// ]
-
 
 // Render sign up and sign in form
 let increaseId = 0;
@@ -225,17 +221,11 @@ let increaseId = 0;
 function renderSignForm (){
     
 
-    // Sign up form validation
+    // Sign up form validation variables
     const formSignUP = document.querySelector('#form-signUp');
-    
-    // sign In form validation
     const formSignIn = document.querySelector('#form-signIn');
-
-    // requst password
-    const requestPasswordForm = document.querySelector('.request--password__email');
-
-    //resetting password
-    const resetPasswordForm = document.querySelector(' .resetPassword ');
+    const requestPasswordEmailForm = document.querySelector('#request--password__email');
+    const resetPasswordForm = document.querySelector('#resetPassword');
 
 
     // check if the form exist  
@@ -250,7 +240,7 @@ function renderSignForm (){
     }
 
     if(formSignIn){
-
+        
         formSignIn.addEventListener('submit', e =>{
             e.preventDefault();
         
@@ -258,8 +248,8 @@ function renderSignForm (){
         })
     }
 
-    if(requestPasswordForm){
-         requestPasswordForm.addEventListener('submit', (e)=>{
+    if(requestPasswordEmailForm ){
+         requestPasswordEmailForm.addEventListener('submit', (e)=>{
             e.preventDefault()
 
             requestPasswordEmail () ; 
@@ -277,9 +267,6 @@ function renderSignForm (){
     
 }
 
-
-
-// function savedDataInformation (){}
 
 //sign Up validation
 function validateSignUp () {
@@ -395,7 +382,7 @@ function validateSignUp () {
 
     }
     
-
+    console.log('Sign-up form submitted'); // inside validateSignUp()
 }
 
 // sign In validation
@@ -427,7 +414,6 @@ function validateSignIn (){
     emptyInput(emailSignIn, passwordSignIn, confirmPasswordSignIn);
 }
 
-
 // // Empty input function
 function emptyInput(firstName,lastName,email,phone,password,confirmPassword){
     firstName.value = '';
@@ -437,7 +423,6 @@ function emptyInput(firstName,lastName,email,phone,password,confirmPassword){
     password.value = '';
     confirmPassword.value = ''
 }
-
 
 // Request password email
 // take in the user email
@@ -450,6 +435,7 @@ function requestPasswordEmail () {
     const requestPasswordEmailInput = document.querySelector('#request-email');
     const requestPasswordEmailInputValue = requestPasswordEmailInput.value.trim();
 
+    // this will return a truthy value
     const userEmailFound = signUpSavedInfo.find ( user =>
         user.email === requestPasswordEmailInputValue
     );    
@@ -462,23 +448,23 @@ function requestPasswordEmail () {
         // using the setError fun so i can user the other param of message to display a message
         setError( requestPasswordEmailInput , 'Email found! Redirecting...')
 
+        console.log('Redirecting....');
+        
         setTimeout(() =>{
             window.location.href = "resetPassword.html";
+
         },1000)
+        
+        console.log("error interception");
         
     }else {
         setError( requestPasswordEmailInput , 'Are you sure you are one of us ?')
         
     }
+
+    console.log('Password reset requested redirecting...'); // inside requestPasswordEmail()
     
 }
-
-
-// Reset password code
-// take input value of new password
-// confirm the password again
-// then save/ update the user password
-
 
 
 function resettingPassword (){
