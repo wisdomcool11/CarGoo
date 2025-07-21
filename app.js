@@ -257,7 +257,7 @@ function renderSignForm (){
     }
 
     if( resetPasswordForm ){
-        resetPasswordForm.addEventListener('submit', (e)=>{
+        resetPasswordForm.addEventListener('click', (e)=>{
             e.preventDefault()
         
             resettingPassword ();
@@ -468,23 +468,25 @@ function requestPasswordEmail () {
 
 
 function resettingPassword (){
+    const resetForm = document.querySelector('.resetPassword');
     const password = document.querySelector('.js-reset-password-input') ;
     const confirmPassword = document.querySelector('.js-reset-confirm-password-input');
     const resetEmail = localStorage.getItem('passwordResetEmail');
     let users = JSON.parse(localStorage.getItem('users')) || [];
-
-    if(!password || !confirmPassword){
-        setError(requestPasswordForm.children, 'field is required')
-    }
-
+    
     const newPasswordValue = password.value.trim();
     const confirmPasswordValue = confirmPassword.value.trim()
+
+    if(!password || !confirmPassword){
+        setError(resetForm.children , 'field is required')
+    }
 
     if(newPasswordValue.length < 8){
         setError(password, 'Paswword must be atleast 8 characters')
         
         return
     }
+
     if (newPasswordValue !== confirmPasswordValue) {
         setError(confirmPassword, "password must be a match")
         return;
@@ -504,8 +506,17 @@ function resettingPassword (){
     localStorage.setItem('users', JSON.stringify(users));
     localStorage.removeItem('passwordResetEmail');
 
-    alert("Password reset successfully! You can now log in.");
+    // Show thank you message
+    document.querySelector('.thankyou-message').classList.remove('cancle-btnActive')
+
+    document.querySelector('.thankyou-message').classList.add('activeThankyou');
 }
 
+
+document.querySelector('.thankyou-message span').addEventListener('click', ()=>{
+    document.querySelector('.thankyou-message').classList.add('cancle-btnActive')
+    console.log('is clicking cancle');
+    
+})
 
 
